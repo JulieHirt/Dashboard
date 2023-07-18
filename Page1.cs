@@ -34,5 +34,18 @@ namespace Wisej.DxDashboardSample
 			var workingMode = this.dxDashboard1.Options.workingMode;
 			this.dxDashboard1.Options.workingMode = workingMode == "Designer" ? "viewerOnly" : "Designer";
 		}
+
+		private void listBox1_SelectedIndexChanged(object sender, System.EventArgs e)
+		{
+			if(listBox1.SelectedIndex == 0)
+			{
+				AlertBox.Show("selected 0");
+			}
+			else
+				if(listBox1.SelectedIndex == 1)
+			{
+				AlertBox.Show("selected 1");
+			}
+		}
 	}
 }
