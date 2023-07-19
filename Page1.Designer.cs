@@ -32,8 +32,8 @@
 			this.buttonWorkingMode = new Wisej.Web.Button();
 			this.label1 = new Wisej.Web.Label();
 			this.panel1 = new Wisej.Web.Panel();
-			this.listBox1 = new Wisej.Web.ListBox();
 			this.button1 = new Wisej.Web.Button();
+			this.listBox1 = new Wisej.Web.ListBox();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -45,7 +45,7 @@
 			this.dxDashboard1.BorderStyle = Wisej.Web.BorderStyle.Solid;
 			this.dxDashboard1.Location = new System.Drawing.Point(410, 144);
 			this.dxDashboard1.Name = "dxDashboard1";
-			this.dxDashboard1.Size = new System.Drawing.Size(425, 313);
+			this.dxDashboard1.Size = new System.Drawing.Size(445, 313);
 			this.dxDashboard1.TabIndex = 0;
 			this.dxDashboard1.Text = "dxDashboard1";
 			this.dxDashboard1.WebRequest += new Wisej.Web.WebRequestHandler(this.dxDashboard1_WebRequest);
@@ -64,14 +64,16 @@
 			// 
 			this.label1.Anchor = Wisej.Web.AnchorStyles.Top;
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(489, 68);
+			this.label1.Location = new System.Drawing.Point(499, 68);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(459, 15);
+			this.label1.Size = new System.Drawing.Size(458, 18);
 			this.label1.TabIndex = 2;
 			this.label1.Text = "Restore /Data/nwind.mdb to a SQL database and update the connection string.";
 			// 
 			// panel1
 			// 
+			this.panel1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left)));
 			this.panel1.BorderStyle = Wisej.Web.BorderStyle.Solid;
 			this.panel1.Controls.Add(this.button1);
 			this.panel1.Controls.Add(this.listBox1);
@@ -83,10 +85,21 @@
 			this.panel1.TabIndex = 3;
 			this.panel1.Text = "DASHBOARDS";
 			// 
+			// button1
+			// 
+			this.button1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Bottom | Wisej.Web.AnchorStyles.Left) 
+            | Wisej.Web.AnchorStyles.Right)));
+			this.button1.Location = new System.Drawing.Point(-1, 228);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(172, 56);
+			this.button1.TabIndex = 1;
+			this.button1.Text = "+Add New Dashboard";
+			// 
 			// listBox1
 			// 
 			this.listBox1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
+			this.listBox1.BorderStyle = Wisej.Web.BorderStyle.None;
 			this.listBox1.Items.AddRange(new object[] {
             "one ",
             "two ",
@@ -97,14 +110,6 @@
 			this.listBox1.TabIndex = 0;
 			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
 			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(43, 228);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(100, 27);
-			this.button1.TabIndex = 1;
-			this.button1.Text = "+";
-			// 
 			// Page1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -114,7 +119,7 @@
 			this.Controls.Add(this.buttonWorkingMode);
 			this.Controls.Add(this.dxDashboard1);
 			this.Name = "Page1";
-			this.Size = new System.Drawing.Size(1211, 505);
+			this.Size = new System.Drawing.Size(1231, 505);
 			this.Load += new System.EventHandler(this.Page1_Load);
 			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
