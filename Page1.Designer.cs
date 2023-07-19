@@ -45,7 +45,7 @@
 			this.dxDashboard1.BorderStyle = Wisej.Web.BorderStyle.Solid;
 			this.dxDashboard1.Location = new System.Drawing.Point(410, 144);
 			this.dxDashboard1.Name = "dxDashboard1";
-			this.dxDashboard1.Size = new System.Drawing.Size(445, 313);
+			this.dxDashboard1.Size = new System.Drawing.Size(439, 259);
 			this.dxDashboard1.TabIndex = 0;
 			this.dxDashboard1.Text = "dxDashboard1";
 			this.dxDashboard1.WebRequest += new Wisej.Web.WebRequestHandler(this.dxDashboard1_WebRequest);
@@ -53,7 +53,7 @@
 			// buttonWorkingMode
 			// 
 			this.buttonWorkingMode.Anchor = Wisej.Web.AnchorStyles.Left;
-			this.buttonWorkingMode.Location = new System.Drawing.Point(58, 245);
+			this.buttonWorkingMode.Location = new System.Drawing.Point(58, 218);
 			this.buttonWorkingMode.Name = "buttonWorkingMode";
 			this.buttonWorkingMode.Size = new System.Drawing.Size(156, 37);
 			this.buttonWorkingMode.TabIndex = 1;
@@ -64,7 +64,7 @@
 			// 
 			this.label1.Anchor = Wisej.Web.AnchorStyles.Top;
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(239, 58);
+			this.label1.Location = new System.Drawing.Point(82, 58);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(569, 18);
 			this.label1.TabIndex = 2;
@@ -82,7 +82,7 @@
 			this.panel1.Name = "panel1";
 			this.panel1.ShowCloseButton = false;
 			this.panel1.ShowHeader = true;
-			this.panel1.Size = new System.Drawing.Size(172, 313);
+			this.panel1.Size = new System.Drawing.Size(172, 259);
 			this.panel1.TabIndex = 3;
 			this.panel1.Text = "DASHBOARDS";
 			// 
@@ -90,7 +90,7 @@
 			// 
 			this.button1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Bottom | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
-			this.button1.Location = new System.Drawing.Point(-1, 228);
+			this.button1.Location = new System.Drawing.Point(-1, 174);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(172, 56);
 			this.button1.TabIndex = 1;
@@ -108,20 +108,20 @@
             "three"});
 			this.listBox1.Location = new System.Drawing.Point(-1, 3);
 			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(172, 228);
+			this.listBox1.Size = new System.Drawing.Size(172, 174);
 			this.listBox1.TabIndex = 0;
 			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
 			// 
 			// Page1
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
 			this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.buttonWorkingMode);
 			this.Controls.Add(this.dxDashboard1);
 			this.Name = "Page1";
-			this.Size = new System.Drawing.Size(1231, 505);
+			this.Size = new System.Drawing.Size(916, 451);
 			this.Load += new System.EventHandler(this.Page1_Load);
 			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
