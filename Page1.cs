@@ -40,13 +40,13 @@ namespace Wisej.DxDashboardSample
 			if(listBox1.SelectedIndex == 0)
 			{
 				AlertBox.Show("selected 0");
-				this.dxDashboard1.Eval(@"this.widget.loadDashboard('dashboard1')");
+				this.dxDashboard1.Instance.loadDashboard("dashboard1");
 			}
 			else
 				if(listBox1.SelectedIndex == 1)
 			{
 				AlertBox.Show("selected 1");
-				this.dxDashboard1.Eval(@"this.widget.loadDashboard('dashboard2')");
+				this.dxDashboard1.Instance.loadDashboard("dashboard2");
 			}
 		}
 	}
