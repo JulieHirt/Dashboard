@@ -1,5 +1,8 @@
 ﻿using DevExpress.DashboardWeb;
 using DevExpress.DataAccess.Web;
+using System.Collections.Generic;
+using System.IO;
+using System;
 using Wisej.Core;
 using Wisej.Web;
 
@@ -22,6 +25,12 @@ namespace Wisej.DxDashboardSample
 
 			DashboardConfigurator.Default.SetConnectionStringsProvider(new ConfigFileConnectionStringsProvider());
 			DashboardConfigurator.Default.SetDashboardStorage(new DashboardFileStorage(Application.MapPath("Data/Dashboards")));
+
+
+			//get a list of the dashboard files and populate the ListBox with the contents of the list
+			//so the user can click on any dashboard in the list and have it loaded
+			List<string> fileNames = GetFileNamesInFolder("./Data/Dashboards");
+			listBox1.DataSource = fileNames;
 		}
 
 		private void dxDashboard1_WebRequest(object sender, WebRequestEventArgs e)
@@ -48,6 +57,35 @@ namespace Wisej.DxDashboardSample
 				AlertBox.Show("selected 1");
 				this.dxDashboard1.Instance.loadDashboard("dashboard2");
 			}
+		}
+
+		List<string> GetFileNamesInFolder(string folderPath)
+		{
+			List<string> fileNames = new List<string>();
+
+			try
+			{
+				// Check if the directory exists
+				if (Directory.Exists(folderPath))
+				{
+					// Get all files in the directory and add their names to the list
+					string[] files = Directory.GetFiles(folderPath);
+					foreach (string file in files)
+					{
+						fileNames.Add(Path.GetFileName(file));
+					}
+				}
+				else
+				{
+					Console.WriteLine("The specified directory does not exist.");
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("An error occurred: " + ex.Message);
+			}
+
+			return fileNames;
 		}
 	}
 }
