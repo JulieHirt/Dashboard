@@ -64,11 +64,12 @@
 			// 
 			this.label1.Anchor = Wisej.Web.AnchorStyles.Top;
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(499, 68);
+			this.label1.Location = new System.Drawing.Point(239, 58);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(458, 18);
+			this.label1.Size = new System.Drawing.Size(569, 18);
 			this.label1.TabIndex = 2;
-			this.label1.Text = "Restore /Data/nwind.mdb to a SQL database and update the connection string.";
+			this.label1.Text = "Restore /Data/nwind.mdb to a SQL database and update the connection string in app" +
+    "settings.json.";
 			// 
 			// panel1
 			// 
