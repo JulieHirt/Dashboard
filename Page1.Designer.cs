@@ -34,6 +34,12 @@
 			this.panel1 = new Wisej.Web.Panel();
 			this.listBox1 = new Wisej.Web.ListBox();
 			this.splitButton1 = new Wisej.Web.SplitButton();
+			this.CustomerReports = new Wisej.Web.MenuItem();
+			this.Customers = new Wisej.Web.MenuItem();
+			this.EmployeeCustomers = new Wisej.Web.MenuItem();
+			this.OrderDetails = new Wisej.Web.MenuItem();
+			this.ProductReports = new Wisej.Web.MenuItem();
+			this.OrderReports = new Wisej.Web.MenuItem();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -107,11 +113,54 @@
 			this.splitButton1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Bottom | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
 			this.splitButton1.Location = new System.Drawing.Point(-1, 183);
+			this.splitButton1.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
+            this.CustomerReports,
+            this.Customers,
+            this.EmployeeCustomers,
+            this.OrderDetails,
+            this.ProductReports,
+            this.OrderReports});
 			this.splitButton1.Name = "splitButton1";
 			this.splitButton1.Orientation = Wisej.Web.Orientation.Vertical;
 			this.splitButton1.Size = new System.Drawing.Size(172, 47);
 			this.splitButton1.TabIndex = 2;
-			this.splitButton1.Text = "+ Add New Dashboard";
+			this.splitButton1.Text = "Add New Dashboard";
+			// 
+			// CustomerReports
+			// 
+			this.CustomerReports.Index = 0;
+			this.CustomerReports.Name = "CustomerReports";
+			this.CustomerReports.Text = "CustomerReports";
+			// 
+			// Customers
+			// 
+			this.Customers.Index = 1;
+			this.Customers.Name = "Customers";
+			this.Customers.Text = "Customers";
+			// 
+			// EmployeeCustomers
+			// 
+			this.EmployeeCustomers.Index = 2;
+			this.EmployeeCustomers.Name = "EmployeeCustomers";
+			this.EmployeeCustomers.Text = "EmployeeCustomers";
+			// 
+			// OrderDetails
+			// 
+			this.OrderDetails.Index = 3;
+			this.OrderDetails.Name = "OrderDetails";
+			this.OrderDetails.Text = "OrderDetails";
+			// 
+			// ProductReports
+			// 
+			this.ProductReports.Index = 4;
+			this.ProductReports.Name = "ProductReports";
+			this.ProductReports.Text = "ProductReports";
+			// 
+			// OrderReports
+			// 
+			this.OrderReports.Index = 5;
+			this.OrderReports.Name = "OrderReports";
+			this.OrderReports.Text = "OrderReports";
 			// 
 			// Page1
 			// 
@@ -138,6 +187,12 @@
 		private Web.Panel panel1;
 		private Web.ListBox listBox1;
 		private Web.SplitButton splitButton1;
+		private Web.MenuItem CustomerReports;
+		private Web.MenuItem Customers;
+		private Web.MenuItem EmployeeCustomers;
+		private Web.MenuItem OrderDetails;
+		private Web.MenuItem ProductReports;
+		private Web.MenuItem OrderReports;
 	}
 }
 
