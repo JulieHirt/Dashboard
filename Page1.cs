@@ -16,7 +16,7 @@ namespace Wisej.DxDashboardSample
 		{
 			InitializeComponent();
 		}
-
+		List<string> fileNames;
 		private void Page1_Load(object sender, System.EventArgs e)
 		{
 			this.dxDashboard1.Options.endpoint = $"{this.dxDashboard1.GetServiceURL()}";
@@ -29,7 +29,7 @@ namespace Wisej.DxDashboardSample
 
 			//get a list of the dashboard files and populate the ListBox with the contents of the list
 			//so the user can click on any dashboard in the list and have it loaded
-			List<string> fileNames = GetFileNamesInFolder("./Data/Dashboards");
+			fileNames = GetFileNamesInFolder("./Data/Dashboards");
 			listBox1.DataSource = fileNames;
 		}
 
@@ -46,17 +46,8 @@ namespace Wisej.DxDashboardSample
 
 		private void listBox1_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			if(listBox1.SelectedIndex == 0)
-			{
-				AlertBox.Show("selected 0");
-				this.dxDashboard1.Instance.loadDashboard("dashboard1");
-			}
-			else
-				if(listBox1.SelectedIndex == 1)
-			{
-				AlertBox.Show("selected 1");
-				this.dxDashboard1.Instance.loadDashboard("dashboard2");
-			}
+			AlertBox.Show(listBox1.SelectedItem.ToString());
+			this.dxDashboard1.Instance.loadDashboard(listBox1.SelectedItem.ToString());
 		}
 
 		List<string> GetFileNamesInFolder(string folderPath)
@@ -72,7 +63,9 @@ namespace Wisej.DxDashboardSample
 					string[] files = Directory.GetFiles(folderPath);
 					foreach (string file in files)
 					{
-						fileNames.Add(Path.GetFileName(file));
+						string filenameWithExtension = Path.GetFileName(file);
+						string filenameWithoutExtension = Path.GetFileNameWithoutExtension(filenameWithExtension);
+						fileNames.Add(filenameWithoutExtension);
 					}
 				}
 				else
