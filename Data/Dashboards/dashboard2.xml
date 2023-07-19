@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dashboard CurrencyCulture="bn-BD">
-  <Title Text="test" />
+  <Title Text="test2" />
   <DataSources>
     <SqlDataSource Name="SalesPerson" ComponentName="sqlDataSource1">
       <Connection Name="nwindConnection" FromAppConfig="true" />
