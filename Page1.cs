@@ -85,10 +85,10 @@ namespace Wisej.DxDashboardSample
 			return fileNames;
 		}
 
-		void createDashboardTemplate()
+		void createDashboardTemplate(string name)
 		{
 			string sourceFilePath = Application.MapPath(dashboardStorageFolder) + @"/dashboardtemplate.xml";
-			string destinationFilePath = Application.MapPath(dashboardStorageFolder) + @"/dashboardtemplate2.xml";
+			string destinationFilePath = Application.MapPath(dashboardStorageFolder) + $@"/{name}.xml";
 
 			try
 			{
@@ -98,6 +98,9 @@ namespace Wisej.DxDashboardSample
 				//Refresh the list of dashboards to show the new dashboard
 				fileNames = GetFileNamesInFolder(Application.MapPath(dashboardStorageFolder));
 				listBox1.DataSource = fileNames;
+
+				//load the new dashboard
+				this.dxDashboard1.Instance.loadDashboard(name);
 
 				AlertBox.Show("Dashboard template created successfully!");
 			}
@@ -112,7 +115,7 @@ namespace Wisej.DxDashboardSample
 			//this.dxDashboard1.Instance.saveDashboard(listBox1.SelectedItem.ToString());
 			//this.dxDashboard1.Instance.saveDashboard("dashboard3");
 			AlertBox.Show("Button clicked");
-			createDashboardTemplate();
+			createDashboardTemplate("dashboardtemplate2");
 		}
 	}
 }
