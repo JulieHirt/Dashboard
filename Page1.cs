@@ -49,9 +49,7 @@ namespace Wisej.DxDashboardSample
 
 		private void listBox1_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			//AlertBox.Show(listBox1.SelectedItem.ToString());
 			this.dxDashboard1.Instance.loadDashboard(listBox1.SelectedItem.ToString());
-			//this.dxDashboard1.Instance.saveDashboard(listBox1.SelectedItem.ToString());
 		}
 
 		List<string> GetFileNamesInFolder(string folderPath)
@@ -116,6 +114,12 @@ namespace Wisej.DxDashboardSample
 			//this.dxDashboard1.Instance.saveDashboard("dashboard3");
 			AlertBox.Show("Button clicked");
 			createDashboardTemplate("dashboardtemplate2");
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			//saves all changes to the open dashboards
+			this.dxDashboard1.Instance.saveDashboard();
 		}
 	}
 }

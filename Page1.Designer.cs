@@ -40,6 +40,7 @@
 			this.ProductReports = new Wisej.Web.MenuItem();
 			this.OrderReports = new Wisej.Web.MenuItem();
 			this.listBox1 = new Wisej.Web.ListBox();
+			this.button1 = new Wisej.Web.Button();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -51,7 +52,7 @@
 			this.dxDashboard1.BorderStyle = Wisej.Web.BorderStyle.Solid;
 			this.dxDashboard1.Location = new System.Drawing.Point(410, 144);
 			this.dxDashboard1.Name = "dxDashboard1";
-			this.dxDashboard1.Size = new System.Drawing.Size(671, 310);
+			this.dxDashboard1.Size = new System.Drawing.Size(696, 310);
 			this.dxDashboard1.TabIndex = 0;
 			this.dxDashboard1.Text = "dxDashboard1";
 			this.dxDashboard1.WebRequest += new Wisej.Web.WebRequestHandler(this.dxDashboard1_WebRequest);
@@ -70,7 +71,7 @@
 			// 
 			this.label1.Anchor = Wisej.Web.AnchorStyles.Top;
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(198, 58);
+			this.label1.Location = new System.Drawing.Point(210, 58);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(569, 18);
 			this.label1.TabIndex = 2;
@@ -163,16 +164,26 @@
 			this.listBox1.TabIndex = 0;
 			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
 			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(867, 65);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(149, 49);
+			this.button1.TabIndex = 4;
+			this.button1.Text = "save changes to dashboard";
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
 			// Page1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
 			this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.buttonWorkingMode);
 			this.Controls.Add(this.dxDashboard1);
 			this.Name = "Page1";
-			this.Size = new System.Drawing.Size(1148, 502);
+			this.Size = new System.Drawing.Size(1173, 502);
 			this.Load += new System.EventHandler(this.Page1_Load);
 			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
@@ -194,6 +205,7 @@
 		private Web.MenuItem OrderDetails;
 		private Web.MenuItem ProductReports;
 		private Web.MenuItem OrderReports;
+		private Web.Button button1;
 	}
 }
 
