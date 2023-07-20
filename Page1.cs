@@ -121,5 +121,12 @@ namespace Wisej.DxDashboardSample
 			//saves all changes to the open dashboards
 			this.dxDashboard1.Instance.saveDashboard();
 		}
+
+		private void splitButton1_ItemClicked(object sender, MenuButtonItemClickedEventArgs e)
+		{
+			//get the text of the item that was selected
+			//TODO: Load a table from the database base on the text of the item
+			AlertBox.Show(e.Item.Text);
+		}
 	}
 }
