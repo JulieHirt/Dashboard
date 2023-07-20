@@ -32,7 +32,6 @@
 			this.buttonWorkingMode = new Wisej.Web.Button();
 			this.label1 = new Wisej.Web.Label();
 			this.panel1 = new Wisej.Web.Panel();
-			this.listBox1 = new Wisej.Web.ListBox();
 			this.splitButton1 = new Wisej.Web.SplitButton();
 			this.CustomerReports = new Wisej.Web.MenuItem();
 			this.Customers = new Wisej.Web.MenuItem();
@@ -40,6 +39,7 @@
 			this.OrderDetails = new Wisej.Web.MenuItem();
 			this.ProductReports = new Wisej.Web.MenuItem();
 			this.OrderReports = new Wisej.Web.MenuItem();
+			this.listBox1 = new Wisej.Web.ListBox();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -51,7 +51,7 @@
 			this.dxDashboard1.BorderStyle = Wisej.Web.BorderStyle.Solid;
 			this.dxDashboard1.Location = new System.Drawing.Point(410, 144);
 			this.dxDashboard1.Name = "dxDashboard1";
-			this.dxDashboard1.Size = new System.Drawing.Size(675, 259);
+			this.dxDashboard1.Size = new System.Drawing.Size(495, 259);
 			this.dxDashboard1.TabIndex = 0;
 			this.dxDashboard1.Text = "dxDashboard1";
 			this.dxDashboard1.WebRequest += new Wisej.Web.WebRequestHandler(this.dxDashboard1_WebRequest);
@@ -70,7 +70,7 @@
 			// 
 			this.label1.Anchor = Wisej.Web.AnchorStyles.Top;
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(200, 58);
+			this.label1.Location = new System.Drawing.Point(110, 58);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(569, 18);
 			this.label1.TabIndex = 2;
@@ -91,22 +91,6 @@
 			this.panel1.Size = new System.Drawing.Size(172, 259);
 			this.panel1.TabIndex = 3;
 			this.panel1.Text = "DASHBOARDS";
-			// 
-			// listBox1
-			// 
-			this.listBox1.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
-            | Wisej.Web.AnchorStyles.Left) 
-            | Wisej.Web.AnchorStyles.Right)));
-			this.listBox1.BorderStyle = Wisej.Web.BorderStyle.None;
-			this.listBox1.Items.AddRange(new object[] {
-            "one ",
-            "two ",
-            "three"});
-			this.listBox1.Location = new System.Drawing.Point(-1, 3);
-			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(172, 184);
-			this.listBox1.TabIndex = 0;
-			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
 			// 
 			// splitButton1
 			// 
@@ -162,6 +146,22 @@
 			this.OrderReports.Name = "OrderReports";
 			this.OrderReports.Text = "OrderReports";
 			// 
+			// listBox1
+			// 
+			this.listBox1.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left) 
+            | Wisej.Web.AnchorStyles.Right)));
+			this.listBox1.BorderStyle = Wisej.Web.BorderStyle.None;
+			this.listBox1.Items.AddRange(new object[] {
+            "one ",
+            "two ",
+            "three"});
+			this.listBox1.Location = new System.Drawing.Point(-1, 3);
+			this.listBox1.Name = "listBox1";
+			this.listBox1.Size = new System.Drawing.Size(172, 184);
+			this.listBox1.TabIndex = 0;
+			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+			// 
 			// Page1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
@@ -171,7 +171,7 @@
 			this.Controls.Add(this.buttonWorkingMode);
 			this.Controls.Add(this.dxDashboard1);
 			this.Name = "Page1";
-			this.Size = new System.Drawing.Size(1152, 451);
+			this.Size = new System.Drawing.Size(972, 451);
 			this.Load += new System.EventHandler(this.Page1_Load);
 			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);

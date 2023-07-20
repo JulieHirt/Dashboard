@@ -70,12 +70,12 @@ namespace Wisej.DxDashboardSample
 				}
 				else
 				{
-					Console.WriteLine("The specified directory does not exist.");
+					AlertBox.Show("The specified directory does not exist.");
 				}
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine("An error occurred: " + ex.Message);
+				AlertBox.Show("An error occurred: " + ex.Message);
 			}
 
 			return fileNames;
