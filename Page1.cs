@@ -12,6 +12,9 @@ namespace Wisej.DxDashboardSample
 	{
 		private DashboardHelper _dashboardHelper;
 
+		//set this variable to set the folder where the dashboards will be stored
+		private string dashboardStorageFolder = "Data/Dashboards";
+
 		public Page1()
 		{
 			InitializeComponent();
@@ -24,12 +27,12 @@ namespace Wisej.DxDashboardSample
 			this._dashboardHelper = new DashboardHelper(DashboardConfigurator.Default);
 
 			DashboardConfigurator.Default.SetConnectionStringsProvider(new ConfigFileConnectionStringsProvider());
-			DashboardConfigurator.Default.SetDashboardStorage(new DashboardFileStorage(Application.MapPath("Data/Dashboards")));
+			DashboardConfigurator.Default.SetDashboardStorage(new DashboardFileStorage(Application.MapPath(dashboardStorageFolder)));
 
 
 			//get a list of the dashboard files and populate the ListBox with the contents of the list
 			//so the user can click on any dashboard in the list and have it loaded
-			fileNames = GetFileNamesInFolder("./Data/Dashboards");
+			fileNames = GetFileNamesInFolder(Application.MapPath(dashboardStorageFolder));
 			listBox1.DataSource = fileNames;
 		}
 
@@ -48,6 +51,7 @@ namespace Wisej.DxDashboardSample
 		{
 			AlertBox.Show(listBox1.SelectedItem.ToString());
 			this.dxDashboard1.Instance.loadDashboard(listBox1.SelectedItem.ToString());
+			//this.dxDashboard1.Instance.saveDashboard(listBox1.SelectedItem.ToString());
 		}
 
 		List<string> GetFileNamesInFolder(string folderPath)
@@ -79,6 +83,13 @@ namespace Wisej.DxDashboardSample
 			}
 
 			return fileNames;
+		}
+
+		private void splitButton1_Click(object sender, EventArgs e)
+		{
+			//this.dxDashboard1.Instance.saveDashboard(listBox1.SelectedItem.ToString());
+			//this.dxDashboard1.Instance.saveDashboard("dashboard3");
+			AlertBox.Show("Button clicked");
 		}
 	}
 }
