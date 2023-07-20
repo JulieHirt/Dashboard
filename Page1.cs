@@ -49,7 +49,7 @@ namespace Wisej.DxDashboardSample
 
 		private void listBox1_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			AlertBox.Show(listBox1.SelectedItem.ToString());
+			//AlertBox.Show(listBox1.SelectedItem.ToString());
 			this.dxDashboard1.Instance.loadDashboard(listBox1.SelectedItem.ToString());
 			//this.dxDashboard1.Instance.saveDashboard(listBox1.SelectedItem.ToString());
 		}
@@ -85,11 +85,34 @@ namespace Wisej.DxDashboardSample
 			return fileNames;
 		}
 
+		void createDashboardTemplate()
+		{
+			string sourceFilePath = Application.MapPath(dashboardStorageFolder) + @"/dashboardtemplate.xml";
+			string destinationFilePath = Application.MapPath(dashboardStorageFolder) + @"/dashboardtemplate2.xml";
+
+			try
+			{
+				// Copy the file
+				File.Copy(sourceFilePath, destinationFilePath);
+
+				//Refresh the list of dashboards to show the new dashboard
+				fileNames = GetFileNamesInFolder(Application.MapPath(dashboardStorageFolder));
+				listBox1.DataSource = fileNames;
+
+				AlertBox.Show("Dashboard template created successfully!");
+			}
+			catch (IOException ex)
+			{
+				AlertBox.Show("An error occurred while creating the template: " + ex.Message);
+			}
+		}
+
 		private void splitButton1_Click(object sender, EventArgs e)
 		{
 			//this.dxDashboard1.Instance.saveDashboard(listBox1.SelectedItem.ToString());
 			//this.dxDashboard1.Instance.saveDashboard("dashboard3");
 			AlertBox.Show("Button clicked");
+			createDashboardTemplate();
 		}
 	}
 }
