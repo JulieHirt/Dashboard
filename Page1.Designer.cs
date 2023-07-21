@@ -52,7 +52,7 @@
 			this.dxDashboard1.BorderStyle = Wisej.Web.BorderStyle.Solid;
 			this.dxDashboard1.Location = new System.Drawing.Point(410, 144);
 			this.dxDashboard1.Name = "dxDashboard1";
-			this.dxDashboard1.Size = new System.Drawing.Size(671, 310);
+			this.dxDashboard1.Size = new System.Drawing.Size(873, 346);
 			this.dxDashboard1.TabIndex = 0;
 			this.dxDashboard1.Text = "dxDashboard1";
 			this.dxDashboard1.WebRequest += new Wisej.Web.WebRequestHandler(this.dxDashboard1_WebRequest);
@@ -60,7 +60,7 @@
 			// buttonWorkingMode
 			// 
 			this.buttonWorkingMode.Anchor = Wisej.Web.AnchorStyles.Left;
-			this.buttonWorkingMode.Location = new System.Drawing.Point(58, 244);
+			this.buttonWorkingMode.Location = new System.Drawing.Point(58, 262);
 			this.buttonWorkingMode.Name = "buttonWorkingMode";
 			this.buttonWorkingMode.Size = new System.Drawing.Size(156, 37);
 			this.buttonWorkingMode.TabIndex = 1;
@@ -71,7 +71,7 @@
 			// 
 			this.label1.Anchor = Wisej.Web.AnchorStyles.Top;
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(198, 58);
+			this.label1.Location = new System.Drawing.Point(299, 58);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(569, 18);
 			this.label1.TabIndex = 2;
@@ -89,7 +89,7 @@
 			this.panel1.Name = "panel1";
 			this.panel1.ShowCloseButton = false;
 			this.panel1.ShowHeader = true;
-			this.panel1.Size = new System.Drawing.Size(172, 310);
+			this.panel1.Size = new System.Drawing.Size(172, 346);
 			this.panel1.TabIndex = 3;
 			this.panel1.Text = "DASHBOARDS";
 			// 
@@ -97,7 +97,7 @@
 			// 
 			this.splitButton1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Bottom | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
-			this.splitButton1.Location = new System.Drawing.Point(-1, 234);
+			this.splitButton1.Location = new System.Drawing.Point(-1, 270);
 			this.splitButton1.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.CustomerReports,
             this.Customers,
@@ -161,18 +161,18 @@
             "three"});
 			this.listBox1.Location = new System.Drawing.Point(-1, 3);
 			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(172, 235);
+			this.listBox1.Size = new System.Drawing.Size(172, 271);
 			this.listBox1.TabIndex = 0;
 			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(867, 65);
+			this.button1.Location = new System.Drawing.Point(58, 380);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(149, 49);
 			this.button1.TabIndex = 4;
 			this.button1.Text = "save changes to dashboard";
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.button1.Click += new System.EventHandler(this.buttonSave_Click);
 			// 
 			// Page1
 			// 
@@ -184,7 +184,7 @@
 			this.Controls.Add(this.buttonWorkingMode);
 			this.Controls.Add(this.dxDashboard1);
 			this.Name = "Page1";
-			this.Size = new System.Drawing.Size(1148, 502);
+			this.Size = new System.Drawing.Size(1350, 538);
 			this.Load += new System.EventHandler(this.Page1_Load);
 			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
