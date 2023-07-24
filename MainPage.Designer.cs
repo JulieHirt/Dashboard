@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+			this.components = new System.ComponentModel.Container();
 			this.dxDashboard1 = new Wisej.Web.Ext.DxDashboard.DxDashboard();
 			this.buttonWorkingMode = new Wisej.Web.Button();
 			this.panelDashboards = new Wisej.Web.Panel();
 			this.listBox1 = new Wisej.Web.ListBox();
 			this.buttonAddDashboard = new Wisej.Web.Button();
 			this.flexLayoutPanelTools = new Wisej.Web.FlexLayoutPanel();
-			this.buttonDelete = new Wisej.Web.Button();
-			this.buttonShare = new Wisej.Web.Button();
 			this.buttonExportReport = new Wisej.Web.Button();
+			this.buttonShare = new Wisej.Web.Button();
+			this.buttonDelete = new Wisej.Web.Button();
 			this.pictureBox1 = new Wisej.Web.PictureBox();
 			this.panel2 = new Wisej.Web.Panel();
 			this.flexLayoutPanel2 = new Wisej.Web.FlexLayoutPanel();
@@ -52,6 +53,7 @@
 			this.dateTimePicker1 = new Wisej.Web.DateTimePicker();
 			this.dateTimePicker2 = new Wisej.Web.DateTimePicker();
 			this.label2 = new Wisej.Web.Label();
+			this.contextMenuDashboards = new Wisej.Web.ContextMenu(this.components);
 			this.panelDashboards.SuspendLayout();
 			this.flexLayoutPanelTools.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,7 +67,7 @@
 			this.dxDashboard1.Dock = Wisej.Web.DockStyle.Fill;
 			this.dxDashboard1.Location = new System.Drawing.Point(278, 103);
 			this.dxDashboard1.Name = "dxDashboard1";
-			this.dxDashboard1.Size = new System.Drawing.Size(1569, 811);
+			this.dxDashboard1.Size = new System.Drawing.Size(1569, 728);
 			this.dxDashboard1.TabIndex = 0;
 			this.dxDashboard1.Text = "dxDashboard1";
 			this.dxDashboard1.WebRequest += new Wisej.Web.WebRequestHandler(this.dxDashboard1_WebRequest);
@@ -94,7 +96,7 @@
 			this.panelDashboards.Name = "panelDashboards";
 			this.panelDashboards.ShowCloseButton = false;
 			this.panelDashboards.ShowHeader = true;
-			this.panelDashboards.Size = new System.Drawing.Size(228, 811);
+			this.panelDashboards.Size = new System.Drawing.Size(228, 728);
 			this.panelDashboards.TabIndex = 3;
 			this.panelDashboards.Text = "MY DASHBOARDS";
 			// 
@@ -107,7 +109,7 @@
 			this.listBox1.ItemHeight = 40;
 			this.listBox1.Location = new System.Drawing.Point(0, 0);
 			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(228, 738);
+			this.listBox1.Size = new System.Drawing.Size(228, 632);
 			this.listBox1.TabIndex = 0;
 			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBoxDashboards_SelectedIndexChanged);
 			// 
@@ -118,14 +120,13 @@
 			this.buttonAddDashboard.Dock = Wisej.Web.DockStyle.Bottom;
 			this.buttonAddDashboard.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
 			this.buttonAddDashboard.ImageSource = "resource.wx/Wisej.Ext.BootstrapIcons/bar-chart.svg";
-			this.buttonAddDashboard.Location = new System.Drawing.Point(0, 738);
+			this.buttonAddDashboard.Location = new System.Drawing.Point(0, 632);
 			this.buttonAddDashboard.Name = "buttonAddDashboard";
-			this.buttonAddDashboard.Padding = new Wisej.Web.Padding(0, 0, 16, 0);
-			this.buttonAddDashboard.Size = new System.Drawing.Size(228, 45);
+			this.buttonAddDashboard.Size = new System.Drawing.Size(228, 68);
 			this.buttonAddDashboard.TabIndex = 1;
 			this.buttonAddDashboard.Text = "Add Dashboard";
-			this.buttonAddDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.buttonAddDashboard.ItemClicked += new Wisej.Web.MenuButtonItemClickedEventHandler(this.buttonAddDashboard_ItemClicked);
+			this.buttonAddDashboard.TextImageRelation = Wisej.Web.TextImageRelation.ImageAboveText;
+			this.buttonAddDashboard.Click += new System.EventHandler(this.buttonAddDashboard_Click);
 			// 
 			// flexLayoutPanelTools
 			// 
@@ -140,19 +141,19 @@
 			this.flexLayoutPanelTools.Location = new System.Drawing.Point(0, 103);
 			this.flexLayoutPanelTools.Name = "flexLayoutPanelTools";
 			this.flexLayoutPanelTools.Padding = new Wisej.Web.Padding(0, 8, 0, 0);
-			this.flexLayoutPanelTools.Size = new System.Drawing.Size(50, 811);
+			this.flexLayoutPanelTools.Size = new System.Drawing.Size(50, 728);
 			this.flexLayoutPanelTools.TabIndex = 4;
 			// 
-			// buttonDelete
+			// buttonExportReport
 			// 
-			this.buttonDelete.Anchor = Wisej.Web.AnchorStyles.Top;
-			this.buttonDelete.BackColor = System.Drawing.Color.Transparent;
-			this.buttonDelete.Focusable = false;
-			this.buttonDelete.ImageSource = "resource.wx/Wisej.Ext.BootstrapIcons/trash.svg";
-			this.buttonDelete.Location = new System.Drawing.Point(3, 149);
-			this.buttonDelete.Name = "buttonDelete";
-			this.buttonDelete.Size = new System.Drawing.Size(44, 30);
-			this.buttonDelete.TabIndex = 4;
+			this.buttonExportReport.Anchor = Wisej.Web.AnchorStyles.Top;
+			this.buttonExportReport.BackColor = System.Drawing.Color.Transparent;
+			this.buttonExportReport.Focusable = false;
+			this.buttonExportReport.ImageSource = "file-excel";
+			this.buttonExportReport.Location = new System.Drawing.Point(3, 57);
+			this.buttonExportReport.Name = "buttonExportReport";
+			this.buttonExportReport.Size = new System.Drawing.Size(44, 30);
+			this.buttonExportReport.TabIndex = 2;
 			// 
 			// buttonShare
 			// 
@@ -165,16 +166,16 @@
 			this.buttonShare.Size = new System.Drawing.Size(44, 30);
 			this.buttonShare.TabIndex = 3;
 			// 
-			// buttonExportReport
+			// buttonDelete
 			// 
-			this.buttonExportReport.Anchor = Wisej.Web.AnchorStyles.Top;
-			this.buttonExportReport.BackColor = System.Drawing.Color.Transparent;
-			this.buttonExportReport.Focusable = false;
-			this.buttonExportReport.ImageSource = "file-excel";
-			this.buttonExportReport.Location = new System.Drawing.Point(3, 57);
-			this.buttonExportReport.Name = "buttonExportReport";
-			this.buttonExportReport.Size = new System.Drawing.Size(44, 30);
-			this.buttonExportReport.TabIndex = 2;
+			this.buttonDelete.Anchor = Wisej.Web.AnchorStyles.Top;
+			this.buttonDelete.BackColor = System.Drawing.Color.Transparent;
+			this.buttonDelete.Focusable = false;
+			this.buttonDelete.ImageSource = "resource.wx/Wisej.Ext.BootstrapIcons/trash.svg";
+			this.buttonDelete.Location = new System.Drawing.Point(3, 149);
+			this.buttonDelete.Name = "buttonDelete";
+			this.buttonDelete.Size = new System.Drawing.Size(44, 30);
+			this.buttonDelete.TabIndex = 4;
 			// 
 			// pictureBox1
 			// 
@@ -342,6 +343,11 @@
 			this.label2.TabIndex = 3;
 			this.label2.Text = "Dashboard Manager";
 			// 
+			// contextMenuDashboards
+			// 
+			this.contextMenuDashboards.Name = "contextMenuDashboards";
+			this.contextMenuDashboards.MenuItemClicked += new Wisej.Web.MenuItemEventHandler(this.contextMenuDashboards_MenuItemClicked);
+			// 
 			// MainPage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
@@ -351,7 +357,7 @@
 			this.Controls.Add(this.flexLayoutPanelTools);
 			this.Controls.Add(this.panel2);
 			this.Name = "MainPage";
-			this.Size = new System.Drawing.Size(1847, 914);
+			this.Size = new System.Drawing.Size(1847, 831);
 			this.Load += new System.EventHandler(this.MainPage_Load);
 			this.panelDashboards.ResumeLayout(false);
 			this.flexLayoutPanelTools.ResumeLayout(false);
@@ -392,6 +398,7 @@
 		private Web.Button buttonShare;
 		private Web.Button buttonExportReport;
 		private Web.Button buttonDelete;
+		private Web.ContextMenu contextMenuDashboards;
 	}
 }
 

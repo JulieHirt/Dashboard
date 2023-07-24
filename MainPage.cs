@@ -63,7 +63,7 @@ namespace Wisej.DxDashboardSample
 					string filenameWithExtension = Path.GetFileName(file);
 					string filenameWithoutExtension = Path.GetFileNameWithoutExtension(filenameWithExtension);
 
-					this.buttonAddDashboard.MenuItems.Add(filenameWithoutExtension.Replace("_", " "));
+					this.contextMenuDashboards.MenuItems.Add(filenameWithoutExtension.Replace("_", " "));
 				}
 			}
 			else
@@ -129,9 +129,14 @@ namespace Wisej.DxDashboardSample
 			}
 		}
 
-		private void buttonAddDashboard_ItemClicked(object sender, MenuButtonItemClickedEventArgs e)
+		private void buttonAddDashboard_Click(object sender, EventArgs e)
 		{
-			var templateName = e.Item.Text;
+			this.contextMenuDashboards.Show(this.buttonAddDashboard, Placement.TopCenter);
+		}
+
+		private void contextMenuDashboards_MenuItemClicked(object sender, MenuItemEventArgs e)
+		{
+			var templateName = e.MenuItem.Text;
 			CreateDashboardFromTemplate(templateName.Replace(" ", "_"));
 		}
 	}
