@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.dxDashboard1 = new Wisej.Web.Ext.DxDashboard.DxDashboard();
+			this.dxDashboard = new Wisej.Web.Ext.DxDashboard.DxDashboard();
 			this.buttonWorkingMode = new Wisej.Web.Button();
 			this.label1 = new Wisej.Web.Label();
 			this.panel1 = new Wisej.Web.Panel();
-			this.splitButton1 = new Wisej.Web.SplitButton();
+			this.splitButtonCreateDashboard = new Wisej.Web.SplitButton();
 			this.CustomerReports = new Wisej.Web.MenuItem();
 			this.Customers = new Wisej.Web.MenuItem();
 			this.EmployeeCustomers = new Wisej.Web.MenuItem();
 			this.OrderDetails = new Wisej.Web.MenuItem();
 			this.ProductReports = new Wisej.Web.MenuItem();
 			this.OrderReports = new Wisej.Web.MenuItem();
-			this.listBox1 = new Wisej.Web.ListBox();
+			this.listBoxDashboardList = new Wisej.Web.ListBox();
 			this.button1 = new Wisej.Web.Button();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// dxDashboard1
 			// 
-			this.dxDashboard1.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+			this.dxDashboard.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
             | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
-			this.dxDashboard1.BorderStyle = Wisej.Web.BorderStyle.Solid;
-			this.dxDashboard1.Location = new System.Drawing.Point(410, 144);
-			this.dxDashboard1.Name = "dxDashboard1";
-			this.dxDashboard1.Size = new System.Drawing.Size(873, 346);
-			this.dxDashboard1.TabIndex = 0;
-			this.dxDashboard1.Text = "dxDashboard1";
-			this.dxDashboard1.WebRequest += new Wisej.Web.WebRequestHandler(this.dxDashboard1_WebRequest);
+			this.dxDashboard.BorderStyle = Wisej.Web.BorderStyle.Solid;
+			this.dxDashboard.Location = new System.Drawing.Point(410, 144);
+			this.dxDashboard.Name = "dxDashboard1";
+			this.dxDashboard.Size = new System.Drawing.Size(873, 346);
+			this.dxDashboard.TabIndex = 0;
+			this.dxDashboard.Text = "dxDashboard1";
+			this.dxDashboard.WebRequest += new Wisej.Web.WebRequestHandler(this.dxDashboard_WebRequest);
 			// 
 			// buttonWorkingMode
 			// 
@@ -83,8 +83,8 @@
 			this.panel1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
             | Wisej.Web.AnchorStyles.Left)));
 			this.panel1.BorderStyle = Wisej.Web.BorderStyle.Solid;
-			this.panel1.Controls.Add(this.splitButton1);
-			this.panel1.Controls.Add(this.listBox1);
+			this.panel1.Controls.Add(this.splitButtonCreateDashboard);
+			this.panel1.Controls.Add(this.listBoxDashboardList);
 			this.panel1.Location = new System.Drawing.Point(238, 144);
 			this.panel1.Name = "panel1";
 			this.panel1.ShowCloseButton = false;
@@ -95,23 +95,23 @@
 			// 
 			// splitButton1
 			// 
-			this.splitButton1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Bottom | Wisej.Web.AnchorStyles.Left) 
+			this.splitButtonCreateDashboard.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Bottom | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
-			this.splitButton1.Location = new System.Drawing.Point(-1, 270);
-			this.splitButton1.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
+			this.splitButtonCreateDashboard.Location = new System.Drawing.Point(-1, 270);
+			this.splitButtonCreateDashboard.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.CustomerReports,
             this.Customers,
             this.EmployeeCustomers,
             this.OrderDetails,
             this.ProductReports,
             this.OrderReports});
-			this.splitButton1.Name = "splitButton1";
-			this.splitButton1.Orientation = Wisej.Web.Orientation.Vertical;
-			this.splitButton1.Size = new System.Drawing.Size(172, 47);
-			this.splitButton1.TabIndex = 2;
-			this.splitButton1.Text = "Add New Dashboard";
-			this.splitButton1.ItemClicked += new Wisej.Web.MenuButtonItemClickedEventHandler(this.splitButton1_ItemClicked);
-			this.splitButton1.Click += new System.EventHandler(this.splitButton1_Click);
+			this.splitButtonCreateDashboard.Name = "splitButton1";
+			this.splitButtonCreateDashboard.Orientation = Wisej.Web.Orientation.Vertical;
+			this.splitButtonCreateDashboard.Size = new System.Drawing.Size(172, 47);
+			this.splitButtonCreateDashboard.TabIndex = 2;
+			this.splitButtonCreateDashboard.Text = "Add New Dashboard";
+			this.splitButtonCreateDashboard.ItemClicked += new Wisej.Web.MenuButtonItemClickedEventHandler(this.splitButtonCreateDashboard_ItemClicked);
+			this.splitButtonCreateDashboard.Click += new System.EventHandler(this.splitButtonCreateDashboard_Click);
 			// 
 			// CustomerReports
 			// 
@@ -151,19 +151,19 @@
 			// 
 			// listBox1
 			// 
-			this.listBox1.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+			this.listBoxDashboardList.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
             | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
-			this.listBox1.BorderStyle = Wisej.Web.BorderStyle.None;
-			this.listBox1.Items.AddRange(new object[] {
+			this.listBoxDashboardList.BorderStyle = Wisej.Web.BorderStyle.None;
+			this.listBoxDashboardList.Items.AddRange(new object[] {
             "one ",
             "two ",
             "three"});
-			this.listBox1.Location = new System.Drawing.Point(-1, 3);
-			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(172, 271);
-			this.listBox1.TabIndex = 0;
-			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+			this.listBoxDashboardList.Location = new System.Drawing.Point(-1, 3);
+			this.listBoxDashboardList.Name = "listBox1";
+			this.listBoxDashboardList.Size = new System.Drawing.Size(172, 271);
+			this.listBoxDashboardList.TabIndex = 0;
+			this.listBoxDashboardList.SelectedIndexChanged += new System.EventHandler(this.listBoxDashboardList_SelectedIndexChanged);
 			// 
 			// button1
 			// 
@@ -182,7 +182,7 @@
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.buttonWorkingMode);
-			this.Controls.Add(this.dxDashboard1);
+			this.Controls.Add(this.dxDashboard);
 			this.Name = "Page1";
 			this.Size = new System.Drawing.Size(1350, 538);
 			this.Load += new System.EventHandler(this.Page1_Load);
@@ -194,12 +194,12 @@
 
         #endregion
 
-        private Web.Ext.DxDashboard.DxDashboard dxDashboard1;
+        private Web.Ext.DxDashboard.DxDashboard dxDashboard;
         private Web.Button buttonWorkingMode;
 		private Web.Label label1;
 		private Web.Panel panel1;
-		private Web.ListBox listBox1;
-		private Web.SplitButton splitButton1;
+		private Web.ListBox listBoxDashboardList;
+		private Web.SplitButton splitButtonCreateDashboard;
 		private Web.MenuItem CustomerReports;
 		private Web.MenuItem Customers;
 		private Web.MenuItem EmployeeCustomers;

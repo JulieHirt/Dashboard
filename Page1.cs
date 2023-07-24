@@ -22,7 +22,7 @@ namespace Wisej.DxDashboardSample
 		List<string> fileNames;
 		private void Page1_Load(object sender, System.EventArgs e)
 		{
-			this.dxDashboard1.Options.endpoint = $"{this.dxDashboard1.GetServiceURL()}";
+			this.dxDashboard.Options.endpoint = $"{this.dxDashboard.GetServiceURL()}";
 
 			this._dashboardHelper = new DashboardHelper(DashboardConfigurator.Default);
 
@@ -32,20 +32,20 @@ namespace Wisej.DxDashboardSample
 			PopulateDashboards(Application.MapPath(dashboardStorageFolder));
 		}
 
-		private void dxDashboard1_WebRequest(object sender, WebRequestEventArgs e)
+		private void dxDashboard_WebRequest(object sender, WebRequestEventArgs e)
 		{
 			this._dashboardHelper.ProcessRequest(sender, e);
 		}
 
 		private void buttonWorkingMode_Click(object sender, System.EventArgs e)
 		{
-			var workingMode = this.dxDashboard1.Options.workingMode;
-			this.dxDashboard1.Options.workingMode = workingMode == "Designer" ? "viewerOnly" : "Designer";
+			var workingMode = this.dxDashboard.Options.workingMode;
+			this.dxDashboard.Options.workingMode = workingMode == "Designer" ? "viewerOnly" : "Designer";
 		}
 
-		private void listBox1_SelectedIndexChanged(object sender, System.EventArgs e)
+		private void listBoxDashboardList_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			this.dxDashboard1.Instance.loadDashboard(listBox1.SelectedItem.ToString());
+			this.dxDashboard.Instance.loadDashboard(listBoxDashboardList.SelectedItem.ToString());
 		}
 
 		// get a list of the dashboard files and populate the ListBox with the contents of the list
@@ -78,10 +78,10 @@ namespace Wisej.DxDashboardSample
 				AlertBox.Show("An error occurred: " + ex.Message);
 			}
 
-			listBox1.DataSource = fileNames;
+			listBoxDashboardList.DataSource = fileNames;
 		}
 
-		void createDashboardTemplate(string name)
+		void cloneDashboardTemplate(string name)
 		{
 			string sourceFilePath = Application.MapPath(dashboardStorageFolder) + @"/dashboardtemplate.xml";
 			string destinationFilePath = Application.MapPath(dashboardStorageFolder) + $@"/{name}.xml";
@@ -95,7 +95,7 @@ namespace Wisej.DxDashboardSample
 				PopulateDashboards(Application.MapPath(dashboardStorageFolder));
 
 				//load the new dashboard
-				this.dxDashboard1.Instance.loadDashboard(name);
+				this.dxDashboard.Instance.loadDashboard(name);
 
 				AlertBox.Show("Dashboard template created successfully!");
 			}
@@ -105,21 +105,21 @@ namespace Wisej.DxDashboardSample
 			}
 		}
 
-		private void splitButton1_Click(object sender, EventArgs e)
+		private void splitButtonCreateDashboard_Click(object sender, EventArgs e)
 		{
 			//this.dxDashboard1.Instance.saveDashboard(listBox1.SelectedItem.ToString());
 			//this.dxDashboard1.Instance.saveDashboard("dashboard3");
 			AlertBox.Show("Button clicked");
-			createDashboardTemplate("dashboardtemplate2");
+			cloneDashboardTemplate("dashboardtemplate2");
 		}
 
 		private void buttonSave_Click(object sender, EventArgs e)
 		{
 			//saves all changes to the open dashboards
-			this.dxDashboard1.Instance.saveDashboard();
+			this.dxDashboard.Instance.saveDashboard();
 		}
 
-		private void splitButton1_ItemClicked(object sender, MenuButtonItemClickedEventArgs e)
+		private void splitButtonCreateDashboard_ItemClicked(object sender, MenuButtonItemClickedEventArgs e)
 		{
 			//get the text of the item that was selected
 			//TODO: Load a table from the database base on the text of the item
