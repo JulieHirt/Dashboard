@@ -29,11 +29,7 @@ namespace Wisej.DxDashboardSample
 			DashboardConfigurator.Default.SetConnectionStringsProvider(new ConfigFileConnectionStringsProvider());
 			DashboardConfigurator.Default.SetDashboardStorage(new DashboardFileStorage(Application.MapPath(dashboardStorageFolder)));
 
-
-			//get a list of the dashboard files and populate the ListBox with the contents of the list
-			//so the user can click on any dashboard in the list and have it loaded
-			fileNames = GetFileNamesInFolder(Application.MapPath(dashboardStorageFolder));
-			listBox1.DataSource = fileNames;
+			PopulateDashboards(Application.MapPath(dashboardStorageFolder));
 		}
 
 		private void dxDashboard1_WebRequest(object sender, WebRequestEventArgs e)
@@ -52,7 +48,9 @@ namespace Wisej.DxDashboardSample
 			this.dxDashboard1.Instance.loadDashboard(listBox1.SelectedItem.ToString());
 		}
 
-		List<string> GetFileNamesInFolder(string folderPath)
+		// get a list of the dashboard files and populate the ListBox with the contents of the list
+		// so the user can click on any dashboard in the list and have it loaded
+		void PopulateDashboards(string folderPath)
 		{
 			List<string> fileNames = new List<string>();
 
@@ -80,7 +78,7 @@ namespace Wisej.DxDashboardSample
 				AlertBox.Show("An error occurred: " + ex.Message);
 			}
 
-			return fileNames;
+			listBox1.DataSource = fileNames;
 		}
 
 		void createDashboardTemplate(string name)
@@ -94,8 +92,7 @@ namespace Wisej.DxDashboardSample
 				File.Copy(sourceFilePath, destinationFilePath);
 
 				//Refresh the list of dashboards to show the new dashboard
-				fileNames = GetFileNamesInFolder(Application.MapPath(dashboardStorageFolder));
-				listBox1.DataSource = fileNames;
+				PopulateDashboards(Application.MapPath(dashboardStorageFolder));
 
 				//load the new dashboard
 				this.dxDashboard1.Instance.loadDashboard(name);
