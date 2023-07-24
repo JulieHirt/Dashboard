@@ -97,7 +97,7 @@ namespace Wisej.DxDashboardSample
 				//load the new dashboard
 				this.dxDashboard.Instance.loadDashboard(name);
 
-				AlertBox.Show("Dashboard template created successfully!");
+				AlertBox.Show("Dashboard template cloned successfully!");
 			}
 			catch (IOException ex)
 			{
@@ -107,10 +107,8 @@ namespace Wisej.DxDashboardSample
 
 		private void splitButtonCreateDashboard_Click(object sender, EventArgs e)
 		{
-			//this.dxDashboard1.Instance.saveDashboard(listBox1.SelectedItem.ToString());
-			//this.dxDashboard1.Instance.saveDashboard("dashboard3");
-			AlertBox.Show("Button clicked");
-			cloneDashboardTemplate("dashboardtemplate2");
+			AlertBox.Show("New dashboard created: NewDashboard");
+			cloneDashboardTemplate("NewDashboard");
 		}
 
 		private void buttonSave_Click(object sender, EventArgs e)
@@ -121,9 +119,9 @@ namespace Wisej.DxDashboardSample
 
 		private void splitButtonCreateDashboard_ItemClicked(object sender, MenuButtonItemClickedEventArgs e)
 		{
-			//get the text of the item that was selected
-			//TODO: Load a table from the database base on the text of the item
-			AlertBox.Show(e.Item.Text);
+			// Create a dashboard named after the item that was selected
+			AlertBox.Show("New dashboard created: "+e.Item.Text);
+			cloneDashboardTemplate(e.Item.Text);
 		}
 	}
 }
