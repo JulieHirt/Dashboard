@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dashboard CurrencyCulture="bn-BD">
-  <Title Text="test" />
+  <Title Text="Senior Services Intake" />
   <DataSources>
     <SqlDataSource Name="SalesPerson" ComponentName="sqlDataSource1">
       <Connection Name="nwindConnection" FromAppConfig="true" />
@@ -27,7 +27,7 @@
     </SqlDataSource>
   </DataSources>
   <Items>
-    <Chart ComponentName="chartDashboardItem1" Name="Chart 1" DataSource="sqlDataSource1" DataMember="SalesPerson">
+    <Chart ComponentName="chartDashboardItem1" Name="FOOD" DataSource="sqlDataSource1" DataMember="SalesPerson">
       <DataItems>
         <Measure DataMember="UnitPrice" DefaultId="DataItem0" />
         <Dimension DataMember="CategoryName" DefaultId="DataItem1" />
@@ -57,22 +57,7 @@
         </Pane>
       </Panes>
     </Chart>
-    <Gauge ComponentName="gaugeDashboardItem1" Name="Gauges 1" DataSource="sqlDataSource1" DataMember="SalesPerson">
-      <DataItems>
-        <Measure DataMember="UnitPrice" DefaultId="DataItem0" />
-        <Dimension DataMember="Country" DefaultId="DataItem1" />
-      </DataItems>
-      <SeriesDimensions>
-        <SeriesDimension DefaultId="DataItem1" />
-      </SeriesDimensions>
-      <GaugeElement>
-        <ActualValue DefaultId="DataItem0" />
-        <AbsoluteVariationNumericFormat />
-        <PercentVariationNumericFormat />
-        <PercentOfTargetNumericFormat />
-      </GaugeElement>
-    </Gauge>
-    <Card ComponentName="cardDashboardItem1" Name="Cards 1" DataSource="sqlDataSource1" DataMember="SalesPerson">
+    <Card ComponentName="cardDashboardItem1" Name="Cards 1" ShowCaption="false" DataSource="sqlDataSource1" DataMember="SalesPerson">
       <DataItems>
         <Measure DataMember="UnitPrice" DefaultId="DataItem0" />
         <Dimension DataMember="CategoryName" DefaultId="DataItem1" />
@@ -113,11 +98,11 @@
   <LayoutTree>
     <LayoutGroup>
       <LayoutGroup Orientation="Vertical">
-        <LayoutGroup>
+        <LayoutGroup Weight="1.437389770723104">
           <LayoutItem DashboardItem="chartDashboardItem1" />
           <LayoutItem DashboardItem="cardDashboardItem1" Weight="1.0376610505450943" />
         </LayoutGroup>
-        <LayoutItem DashboardItem="gaugeDashboardItem1" />
+        <LayoutItem Weight="0.562610229276896" />
       </LayoutGroup>
     </LayoutGroup>
   </LayoutTree>

@@ -31,6 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
+	<Folder Include="Images\" />
 	<Folder Include="Themes\" />
   </ItemGroup>
 
@@ -60,6 +61,7 @@
   <ItemGroup>
 	  <PackageReference Include="Wisej-3" Version="3.2.*-*" />
 	  <PackageReference Include="DevExpress.Dashboard.Core" Version="22.1.4" />
+	  <PackageReference Include="Wisej-3-BootstrapIcons" Version="3.2.3" />
 	  <PackageReference Include="Wisej-3-DxDashboard" Version="3.2.*-*" />
   </ItemGroup>
 
