@@ -3,7 +3,7 @@
   <Title Text="Health Services Intake" />
   <DataSources>
     <SqlDataSource Name="SalesPerson" ComponentName="sqlDataSource1">
-      <Connection Name="nwindConnection" FromAppConfig="true" />
+      <Connection Name="CMMSo" FromAppConfig="true" />
       <Query Type="SelectQuery" Name="SalesPerson">
         <Tables>
           <Table Name="SalesPerson" />

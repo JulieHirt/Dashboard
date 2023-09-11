@@ -3,7 +3,7 @@
   <Title Text="Agency Wide Data Entry Activity" />
   <DataSources>
     <SqlDataSource Name="DashboardReport_Analsys" ComponentName="sqlDataSource1">
-      <Connection Name="nwindConnection" FromAppConfig="true" />
+      <Connection Name="CMMSo" FromAppConfig="true" />
       <Query Type="StoredProcQuery" Name="DASB_RPT">
         <Parameter Name="@MONTH" Type="DevExpress.DataAccess.Expression">(System.Int32)(?Month)</Parameter>
         <Parameter Name="@YEAR" Type="DevExpress.DataAccess.Expression">(System.Int32)(?Year)</Parameter>
@@ -20,7 +20,7 @@
       </CalculatedFields>
     </SqlDataSource>
     <SqlDataSource Name="Dasb_Agency_List" ComponentName="sqlDataSource2">
-      <Connection Name="nwindConnection" FromAppConfig="true" />
+      <Connection Name="CMMSo" FromAppConfig="true" />
       <Query Type="StoredProcQuery" Name="DASB_RPT">
         <Parameter Name="@MONTH" Type="System.Int32">0</Parameter>
         <Parameter Name="@YEAR" Type="System.Int32">0</Parameter>
