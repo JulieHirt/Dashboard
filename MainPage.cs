@@ -5,6 +5,7 @@ using System.IO;
 using System;
 using Wisej.Core;
 using Wisej.Web;
+using DevExpress.DashboardCommon;
 
 namespace Wisej.DxDashboardSample
 {
@@ -29,10 +30,31 @@ namespace Wisej.DxDashboardSample
 			this._dashboardHelper = new DashboardHelper(DashboardConfigurator.Default);
 
 			DashboardConfigurator.Default.SetConnectionStringsProvider(new ConfigFileConnectionStringsProvider());
+			DashboardConfigurator.Default.CustomParameters += DashboardConfigurator_CustomParameters;
 			DashboardConfigurator.Default.SetDashboardStorage(new DashboardFileStorage(DASHBOARD_STORAGE));
 
 			PopulateTemplates();
 			PopulateMyDashboards();	
+		}
+
+		private void DashboardConfigurator_CustomParameters(object sender, CustomParametersEventArgs e)
+		{
+			//Set agency, month, year parameters
+			foreach(var param in e.Parameters)
+			{
+				if (param.Name == "Month")
+				{
+					param.Value = "05";
+				}
+				else if (param.Name == "Year")
+				{
+					param.Value = "2016";
+				}
+				else if (param.Name == "Agency")
+				{
+					param.Value = "01";
+				}
+			}
 		}
 
 		private void dxDashboard1_WebRequest(object sender, WebRequestEventArgs e)
