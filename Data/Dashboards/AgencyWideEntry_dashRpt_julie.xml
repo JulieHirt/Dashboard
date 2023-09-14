@@ -75,27 +75,27 @@
     <Pivot ComponentName="pivotDashboardItem1" Name="Pivot 1" ShowCaption="false" ParentContainer="dashboardTabPage1" DataSource="sqlDataSource1" DataMember="DASB_RPT">
       <InteractivityOptions IgnoreMasterFilters="true" />
       <DataItems>
-        <Dimension DataMember="TBLTYPE" TopNMeasure="DataItem2" DefaultId="DataItem0" />
-        <Measure DataMember="TotalCount" DefaultId="DataItem2">
+        <Dimension DataMember="FYEAR" DefaultId="DataItem0" />
+        <Dimension DataMember="fMONTH" DateTimeGroupInterval="Month" DefaultId="DataItem1" />
+        <Dimension DataMember="Mdate" DateTimeGroupInterval="Day" DefaultId="DataItem2" />
+        <Dimension DataMember="TBLTYPE" TopNMeasure="DataItem4" DefaultId="DataItem3" />
+        <Measure DataMember="TotalCount" DefaultId="DataItem4">
           <NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
         </Measure>
-        <Dimension DataMember="FYEAR" DefaultId="DataItem3" />
-        <Dimension DataMember="fMONTH" DateTimeGroupInterval="Month" DefaultId="DataItem4" />
-        <Dimension DataMember="Mdate" DateTimeGroupInterval="Day" DefaultId="DataItem1" />
       </DataItems>
       <HiddenDimensions>
-        <Dimension DefaultId="DataItem3" />
-        <Dimension DefaultId="DataItem4" />
+        <Dimension DefaultId="DataItem0" />
+        <Dimension DefaultId="DataItem1" />
       </HiddenDimensions>
       <FormatRules>
-        <PivotItemFormatRule Name="Format Rule 1" DataItem="DataItem0" DataItemApplyTo="DataItem0">
+        <PivotItemFormatRule Name="Format Rule 1" DataItem="DataItem3" DataItemApplyTo="DataItem3">
           <FormatConditionValue Condition="NotEqual">
             <AppearanceSettings AppearanceType="Purple" />
             <Value1 Type="System.String" Value="&quot;&quot;" />
           </FormatConditionValue>
           <PivotItemFormatRuleLevel />
         </PivotItemFormatRule>
-        <PivotItemFormatRule Name="Format Rule 2" DataItem="DataItem1" DataItemApplyTo="DataItem1">
+        <PivotItemFormatRule Name="Format Rule 2" DataItem="DataItem2" DataItemApplyTo="DataItem2">
           <FormatConditionValue Condition="NotEqual">
             <AppearanceSettings AppearanceType="PaleBlue" />
             <Value1 Type="System.Int32" Value="0" />
@@ -104,15 +104,14 @@
         </PivotItemFormatRule>
       </FormatRules>
       <Columns>
-        <Column DefaultId="DataItem0" />
+        <Column DefaultId="DataItem3" />
       </Columns>
       <Rows>
-        <Row DefaultId="DataItem1" />
+        <Row DefaultId="DataItem2" />
       </Rows>
       <Values>
-        <Value DefaultId="DataItem2" />
+        <Value DefaultId="DataItem4" />
       </Values>
-      <LayoutType>Tabular</LayoutType>
     </Pivot>
     <TabContainer ComponentName="tabContainerDashboardItem1" Name="Tab Container 1">
       <Pages>
@@ -169,104 +168,7 @@
       </Panes>
       <AxisX EnableZooming="true" LimitVisiblePoints="true" VisiblePointsCount="7" />
     </Chart>
-    <Pivot ComponentName="pivotDashboardItem2" Name="EA Intake Data Entry Activity" ShowCaption="false" ParentContainer="groupDashboardItem1" DataSource="sqlDataSource1" DataMember="DASB_RPT">
-      <DataItems>
-        <Measure DataMember="TotalCount" DefaultId="DataItem0" />
-        <Dimension DataMember="Mdate" DateTimeGroupInterval="Day" DefaultId="DataItem1" />
-        <Dimension DataMember="TBLTYPE" DefaultId="DataItem2" />
-      </DataItems>
-      <FormatRules>
-        <PivotItemFormatRule Name="Format Rule 1" DataItem="DataItem1" DataItemApplyTo="DataItem1">
-          <FormatConditionValue Condition="NotEqual">
-            <AppearanceSettings AppearanceType="PaleBlue" />
-            <Value1 Type="System.Int32" Value="0" />
-          </FormatConditionValue>
-          <PivotItemFormatRuleLevel />
-        </PivotItemFormatRule>
-        <PivotItemFormatRule Name="Format Rule 2" DataItem="DataItem2" DataItemApplyTo="DataItem2">
-          <FormatConditionValue Condition="NotEqual">
-            <AppearanceSettings AppearanceType="Blue" />
-            <Value1 Type="System.String" Value="" />
-          </FormatConditionValue>
-          <PivotItemFormatRuleLevel />
-        </PivotItemFormatRule>
-      </FormatRules>
-      <Columns>
-        <Column DefaultId="DataItem2" />
-      </Columns>
-      <Rows>
-        <Row DefaultId="DataItem1" />
-      </Rows>
-      <Values>
-        <Value DefaultId="DataItem0" />
-      </Values>
-    </Pivot>
-    <Pivot ComponentName="pivotDashboardItem3" Name="Rental/Mortgage Assistance Entry Activity" ShowCaption="false" ParentContainer="groupDashboardItem2" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[DataItem1] = '     Contacts' Or [DataItem1] = '    Service Plans' Or [DataItem1] = '   Services' Or [DataItem1] = '  Outcomes'">
-      <DataItems>
-        <Measure DataMember="TotalCount" DefaultId="DataItem0" />
-        <Dimension DataMember="TBLTYPE" DefaultId="DataItem1" />
-        <Dimension DataMember="Mdate" DateTimeGroupInterval="Day" DefaultId="DataItem2" />
-        <Dimension DataMember="ProgramCode" DefaultId="DataItem3" />
-      </DataItems>
-      <HiddenDimensions>
-        <Dimension DefaultId="DataItem3" />
-      </HiddenDimensions>
-      <FormatRules>
-        <PivotItemFormatRule Name="Format Rule 2" DataItem="DataItem1" DataItemApplyTo="DataItem1">
-          <FormatConditionValue Condition="NotEqual">
-            <AppearanceSettings AppearanceType="Blue" />
-            <Value1 Type="System.String" Value="" />
-          </FormatConditionValue>
-          <PivotItemFormatRuleLevel />
-        </PivotItemFormatRule>
-        <PivotItemFormatRule Name="Format Rule 3" DataItem="DataItem2" DataItemApplyTo="DataItem2">
-          <FormatConditionValue Condition="NotEqual">
-            <AppearanceSettings AppearanceType="PaleBlue" />
-            <Value1 Type="System.Int32" Value="0" />
-          </FormatConditionValue>
-          <PivotItemFormatRuleLevel />
-        </PivotItemFormatRule>
-      </FormatRules>
-      <Columns>
-        <Column DefaultId="DataItem1" />
-      </Columns>
-      <Rows>
-        <Row DefaultId="DataItem2" />
-      </Rows>
-      <Values>
-        <Value DefaultId="DataItem0" />
-      </Values>
-    </Pivot>
-    <ComboBox ComponentName="comboBoxDashboardItem1" Name="Program" ParentContainer="groupDashboardItem1" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[DataItem2] = 'Y'" ShowAllValue="false" EnableSearch="true">
-      <InteractivityOptions IgnoreMasterFilters="false" />
-      <DataItems>
-        <Dimension DataMember="Program" DefaultId="DataItem0" />
-        <Dimension DataMember="ProgramCode" DefaultId="DataItem1" />
-        <Dimension DataMember="DEP_INTAKE_PROG" DefaultId="DataItem2" />
-      </DataItems>
-      <HiddenDimensions>
-        <Dimension DefaultId="DataItem1" />
-        <Dimension DefaultId="DataItem2" />
-      </HiddenDimensions>
-      <FilterDimensions>
-        <Dimension DefaultId="DataItem0" />
-      </FilterDimensions>
-    </ComboBox>
-    <ComboBox ComponentName="comboBoxDashboardItem2" Name="Programs" ParentContainer="groupDashboardItem2" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[DataItem2] = 'N'" ShowAllValue="false">
-      <DataItems>
-        <Dimension DataMember="Program" DefaultId="DataItem0" />
-        <Dimension DataMember="ProgramCode" DefaultId="DataItem1" />
-        <Dimension DataMember="DEP_INTAKE_PROG" DefaultId="DataItem2" />
-      </DataItems>
-      <HiddenDimensions>
-        <Dimension DefaultId="DataItem1" />
-        <Dimension DefaultId="DataItem2" />
-      </HiddenDimensions>
-      <FilterDimensions>
-        <Dimension DefaultId="DataItem0" />
-      </FilterDimensions>
-    </ComboBox>
-    <Chart ComponentName="chartDashboardItem2" Name="Chart 1" DataSource="sqlDataSource1" DataMember="DASB_RPT">
+    <Chart ComponentName="chartDashboardItem2" Name="Daily  Agency Intakes" DataSource="sqlDataSource1" DataMember="DASB_RPT">
       <DataItems>
         <Dimension DataMember="FYEAR" DefaultId="DataItem0" />
         <Dimension DataMember="fMONTH" DateTimeGroupInterval="Month" DefaultId="DataItem1" />
@@ -286,6 +188,7 @@
       </Arguments>
       <Panes>
         <Pane Name="Pane 1">
+          <AxisY Title="Intakes" />
           <Series>
             <Simple>
               <Value DefaultId="DataItem4" />
@@ -293,20 +196,20 @@
           </Series>
         </Pane>
       </Panes>
+      <AxisX TitleVisible="true" Title="Day" />
     </Chart>
+    <Card ComponentName="cardDashboardItem1" Name="Cards 1" DataSource="sqlDataSource1" DataMember="DASB_RPT" />
   </Items>
-  <Groups>
-    <Group ComponentName="groupDashboardItem1" Name="Group 1" ShowCaption="false" />
-    <Group ComponentName="groupDashboardItem2" Name="Group 2" ShowCaption="false" />
-  </Groups>
   <LayoutOptions>
     <Width Value="1090" />
   </LayoutOptions>
   <LayoutTree>
     <LayoutGroup>
       <LayoutGroup Orientation="Vertical">
+        <LayoutItem DashboardItem="chartDashboardItem2" />
         <LayoutGroup>
-          <LayoutTabContainer DashboardItem="tabContainerDashboardItem1">
+          <LayoutItem DashboardItem="cardDashboardItem1" Weight="0.38584629361256995" />
+          <LayoutTabContainer DashboardItem="tabContainerDashboardItem1" Weight="0.5412548723576995">
             <LayoutTabPage DashboardItem="dashboardTabPage1">
               <LayoutItem DashboardItem="pivotDashboardItem1" />
             </LayoutTabPage>
@@ -317,21 +220,6 @@
               <LayoutItem DashboardItem="pieDashboardItem1" />
             </LayoutTabPage>
           </LayoutTabContainer>
-          <LayoutItem DashboardItem="chartDashboardItem2" />
-        </LayoutGroup>
-        <LayoutGroup>
-          <LayoutGroup DashboardItem="groupDashboardItem1">
-            <LayoutGroup Orientation="Vertical">
-              <LayoutItem DashboardItem="comboBoxDashboardItem1" />
-              <LayoutItem DashboardItem="pivotDashboardItem2" />
-            </LayoutGroup>
-          </LayoutGroup>
-          <LayoutGroup DashboardItem="groupDashboardItem2" Weight="1.1065693430656935">
-            <LayoutGroup Orientation="Vertical">
-              <LayoutItem DashboardItem="comboBoxDashboardItem2" />
-              <LayoutItem DashboardItem="pivotDashboardItem3" />
-            </LayoutGroup>
-          </LayoutGroup>
         </LayoutGroup>
       </LayoutGroup>
     </LayoutGroup>
