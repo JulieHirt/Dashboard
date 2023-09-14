@@ -72,102 +72,6 @@
     </Parameter>
   </Parameters>
   <Items>
-    <Pivot ComponentName="pivotDashboardItem1" Name="Pivot 1" ShowCaption="false" ParentContainer="dashboardTabPage1" DataSource="sqlDataSource1" DataMember="DASB_RPT">
-      <InteractivityOptions IgnoreMasterFilters="true" />
-      <DataItems>
-        <Dimension DataMember="FYEAR" DefaultId="DataItem0" />
-        <Dimension DataMember="fMONTH" DateTimeGroupInterval="Month" DefaultId="DataItem1" />
-        <Dimension DataMember="Mdate" DateTimeGroupInterval="Day" DefaultId="DataItem2" />
-        <Dimension DataMember="TBLTYPE" TopNMeasure="DataItem4" DefaultId="DataItem3" />
-        <Measure DataMember="TotalCount" DefaultId="DataItem4">
-          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
-        </Measure>
-      </DataItems>
-      <HiddenDimensions>
-        <Dimension DefaultId="DataItem0" />
-        <Dimension DefaultId="DataItem1" />
-      </HiddenDimensions>
-      <FormatRules>
-        <PivotItemFormatRule Name="Format Rule 1" DataItem="DataItem3" DataItemApplyTo="DataItem3">
-          <FormatConditionValue Condition="NotEqual">
-            <AppearanceSettings AppearanceType="Purple" />
-            <Value1 Type="System.String" Value="&quot;&quot;" />
-          </FormatConditionValue>
-          <PivotItemFormatRuleLevel />
-        </PivotItemFormatRule>
-        <PivotItemFormatRule Name="Format Rule 2" DataItem="DataItem2" DataItemApplyTo="DataItem2">
-          <FormatConditionValue Condition="NotEqual">
-            <AppearanceSettings AppearanceType="PaleBlue" />
-            <Value1 Type="System.Int32" Value="0" />
-          </FormatConditionValue>
-          <PivotItemFormatRuleLevel />
-        </PivotItemFormatRule>
-      </FormatRules>
-      <Columns>
-        <Column DefaultId="DataItem3" />
-      </Columns>
-      <Rows>
-        <Row DefaultId="DataItem2" />
-      </Rows>
-      <Values>
-        <Value DefaultId="DataItem4" />
-      </Values>
-    </Pivot>
-    <TabContainer ComponentName="tabContainerDashboardItem1" Name="Tab Container 1">
-      <Pages>
-        <Page ComponentName="dashboardTabPage1" Name="Page 1" />
-        <Page ComponentName="dashboardTabPage2" Name="Page 2" />
-        <Page ComponentName="dashboardTabPage3" Name="Page 3" />
-      </Pages>
-    </TabContainer>
-    <Pie ComponentName="pieDashboardItem1" Name="Pies 1" ParentContainer="dashboardTabPage2" DataSource="sqlDataSource1" DataMember="DASB_RPT" LabelContentType="ArgumentValueAndPercent">
-      <DataItems>
-        <Measure DataMember="Calculated Field 1" SummaryType="Count" DefaultId="DataItem0">
-          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
-        </Measure>
-        <Dimension DataMember="Mdate" DefaultId="DataItem2" />
-        <Dimension DataMember="TBLTYPE" DefaultId="DataItem3" />
-        <Dimension DataMember="fMONTH" DateTimeGroupInterval="Month" DefaultId="DataItem1" />
-      </DataItems>
-      <SeriesDimensions>
-        <SeriesDimension DefaultId="DataItem2" />
-        <SeriesDimension DefaultId="DataItem1" />
-      </SeriesDimensions>
-      <Arguments>
-        <Argument DefaultId="DataItem3" />
-      </Arguments>
-      <Values>
-        <Value DefaultId="DataItem0" />
-      </Values>
-    </Pie>
-    <Chart ComponentName="chartDashboardItem1" Name="Chart 1" ParentContainer="dashboardTabPage3" DataSource="sqlDataSource1" DataMember="DASB_RPT">
-      <DataItems>
-        <Dimension DataMember="Mdate" DateTimeGroupInterval="Day" DefaultId="DataItem0" />
-        <Dimension DataMember="TBLTYPE" DateTimeGroupInterval="Day" DefaultId="DataItem1" />
-        <Measure DataMember="TotalCount" DefaultId="DataItem2">
-          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
-        </Measure>
-      </DataItems>
-      <SeriesDimensions>
-        <SeriesDimension DefaultId="DataItem1" />
-      </SeriesDimensions>
-      <Arguments>
-        <Argument DefaultId="DataItem0" />
-      </Arguments>
-      <Panes>
-        <Pane Name="Pane 1">
-          <AxisY Logarithmic="true" LogarithmicBase="Base2">
-            <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
-          </AxisY>
-          <Series>
-            <Simple SeriesType="StackedBar">
-              <Value DefaultId="DataItem2" />
-            </Simple>
-          </Series>
-        </Pane>
-      </Panes>
-      <AxisX EnableZooming="true" LimitVisiblePoints="true" VisiblePointsCount="7" />
-    </Chart>
     <Chart ComponentName="chartDashboardItem2" Name="Daily  Agency Intakes" DataSource="sqlDataSource1" DataMember="DASB_RPT">
       <DataItems>
         <Dimension DataMember="FYEAR" DefaultId="DataItem0" />
@@ -198,7 +102,38 @@
       </Panes>
       <AxisX TitleVisible="true" Title="Day" />
     </Chart>
-    <Card ComponentName="cardDashboardItem1" Name="Cards 1" DataSource="sqlDataSource1" DataMember="DASB_RPT" />
+    <Card ComponentName="cardDashboardItem1" Name="Cards 1" DataSource="sqlDataSource1" DataMember="DASB_RPT">
+      <DataItems>
+        <Dimension DataMember="FYEAR" DefaultId="DataItem0" />
+        <Dimension DataMember="fMONTH" DateTimeGroupInterval="Month" DefaultId="DataItem1" />
+        <Dimension DataMember="Mdate" DateTimeGroupInterval="Day" DefaultId="DataItem2" />
+        <Dimension DataMember="TBLTYPE" DefaultId="DataItem3" />
+        <Measure DataMember="TotalCount" DefaultId="DataItem4" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension DefaultId="DataItem0" />
+        <Dimension DefaultId="DataItem1" />
+      </HiddenDimensions>
+      <SeriesDimensions>
+        <SeriesDimension DefaultId="DataItem2" />
+        <SeriesDimension DefaultId="DataItem3" />
+      </SeriesDimensions>
+      <Card>
+        <ActualValue DefaultId="DataItem4" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate Type="Stretched">
+          <TopValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <MainValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <BottomValue1 Visible="true" ValueType="PercentVariation" DimensionIndex="0" />
+          <BottomValue2 Visible="true" ValueType="AbsoluteVariation" DimensionIndex="0" />
+          <DeltaIndicator Visible="true" />
+          <Sparkline Visible="true" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
   </Items>
   <LayoutOptions>
     <Width Value="1090" />
@@ -207,20 +142,7 @@
     <LayoutGroup>
       <LayoutGroup Orientation="Vertical">
         <LayoutItem DashboardItem="chartDashboardItem2" />
-        <LayoutGroup>
-          <LayoutItem DashboardItem="cardDashboardItem1" Weight="0.38584629361256995" />
-          <LayoutTabContainer DashboardItem="tabContainerDashboardItem1" Weight="0.5412548723576995">
-            <LayoutTabPage DashboardItem="dashboardTabPage1">
-              <LayoutItem DashboardItem="pivotDashboardItem1" />
-            </LayoutTabPage>
-            <LayoutTabPage DashboardItem="dashboardTabPage3">
-              <LayoutItem DashboardItem="chartDashboardItem1" />
-            </LayoutTabPage>
-            <LayoutTabPage DashboardItem="dashboardTabPage2">
-              <LayoutItem DashboardItem="pieDashboardItem1" />
-            </LayoutTabPage>
-          </LayoutTabContainer>
-        </LayoutGroup>
+        <LayoutItem DashboardItem="cardDashboardItem1" Weight="1.3452566096423018" />
       </LayoutGroup>
     </LayoutGroup>
   </LayoutTree>
