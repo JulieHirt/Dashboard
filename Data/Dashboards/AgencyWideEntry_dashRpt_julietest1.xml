@@ -11,12 +11,26 @@
         <Parameter Name="@MODE" Type="System.String">AGYRPT</Parameter>
         <ProcName>DASB_RPT</ProcName>
       </Query>
+      <ResultSchema>
+        <DataSet Name="DashboardReport_Analsys">
+          <View Name="DASB_RPT">
+            <Field Name="CurrDay" Type="String" />
+            <Field Name="Mdate" Type="DateTime" />
+            <Field Name="WRKDATES" Type="String" />
+            <Field Name="TBLTYPE" Type="String" />
+            <Field Name="Program" Type="String" />
+            <Field Name="ProgramCode" Type="String" />
+            <Field Name="TotalCount" Type="Int64" />
+            <Field Name="ORDBY" Type="Int32" />
+            <Field Name="DEP_INTAKE_PROG" Type="String" />
+          </View>
+        </DataSet>
+      </ResultSchema>
       <ConnectionOptions CloseConnection="true" />
       <CalculatedFields>
         <CalculatedField Name="fMONTH" Expression="[Mdate] " DataType="Auto" DataMember="DASB_RPT" />
         <CalculatedField Name="FYEAR" Expression="[Mdate] " DataType="Auto" DataMember="DASB_RPT" />
         <CalculatedField Name="Calculated Field 1" Expression="Sum( [TotalCount] ) " DataType="Auto" DataMember="DASB_RPT" />
-        <CalculatedField Name="Calculated Field 2" Expression="Hello" DataMember="DASB_RPT" />
       </CalculatedFields>
     </SqlDataSource>
     <SqlDataSource Name="Dasb_Agency_List" ComponentName="sqlDataSource2">
@@ -103,13 +117,13 @@
       </Panes>
       <AxisX TitleVisible="true" Title="Day" />
     </Chart>
-    <Card ComponentName="cardDashboardItem1" Name="Cards 1" DataSource="sqlDataSource1" DataMember="DASB_RPT">
+    <Card ComponentName="cardDashboardItem1" Name="Cards 1" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[DataItem5] &gt; 0">
       <DataItems>
         <Dimension DataMember="FYEAR" DefaultId="DataItem0" />
         <Dimension DataMember="fMONTH" DateTimeGroupInterval="Month" DefaultId="DataItem1" />
-        <Dimension DataMember="Mdate" DateTimeGroupInterval="Day" DefaultId="DataItem2" />
+        <Dimension DataMember="Mdate" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem2" />
         <Measure DataMember="TotalCount" DefaultId="DataItem4" />
-        <Dimension DataMember="TotalCount" DefaultId="DataItem3" />
+        <Dimension DataMember="TotalCount" DefaultId="DataItem5" />
       </DataItems>
       <HiddenDimensions>
         <Dimension DefaultId="DataItem0" />
@@ -123,6 +137,7 @@
         <AbsoluteVariationNumericFormat />
         <PercentVariationNumericFormat />
         <PercentOfTargetNumericFormat />
+        <SparklineOptions ViewType="Bar" />
         <LayoutTemplate Type="Stretched">
           <TopValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
           <MainValue Visible="true" ValueType="Title" DimensionIndex="0" />
@@ -133,7 +148,7 @@
           <Sparkline Visible="true" />
         </LayoutTemplate>
       </Card>
-      <SparklineArgument DefaultId="DataItem3" />
+      <SparklineArgument DefaultId="DataItem5" />
     </Card>
   </Items>
   <LayoutOptions>
