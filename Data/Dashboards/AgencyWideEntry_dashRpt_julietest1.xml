@@ -118,7 +118,7 @@
       </Panes>
       <AxisX TitleVisible="true" Title="Day" />
     </Chart>
-    <Card ComponentName="cardDashboardItem1" Name="Cards 1" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[TotalCount] &gt; 0">
+    <Card ComponentName="cardDashboardItem1" Name="Amount Per Day" ParentContainer="groupDashboardItem1" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[TotalCount] &gt; 0">
       <DataItems>
         <Dimension DataMember="Mdate" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem2" />
         <Measure DataMember="TotalCount" DefaultId="DataItem4" />
@@ -194,7 +194,18 @@
         </LayoutTemplate>
       </Card>
     </Card>
+    <ListBox ComponentName="listBoxDashboardItem1" Name="Categories" ParentContainer="groupDashboardItem1" DataSource="sqlDataSource1" DataMember="DASB_RPT" IsMasterFilterCrossDataSource="true" ShowAllValue="false" EnableSearch="true" ListBoxType="Radio">
+      <DataItems>
+        <Dimension DataMember="TBLTYPE" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
   </Items>
+  <Groups>
+    <Group ComponentName="groupDashboardItem1" Name="Filter by Category" />
+  </Groups>
   <LayoutOptions>
     <Width Value="1090" />
   </LayoutOptions>
@@ -202,7 +213,10 @@
     <LayoutGroup>
       <LayoutGroup Orientation="Vertical">
         <LayoutItem DashboardItem="chartDashboardItem2" />
-        <LayoutItem DashboardItem="cardDashboardItem1" Weight="1.3452566096423018" />
+        <LayoutGroup DashboardItem="groupDashboardItem1" Weight="1.3452566096423018">
+          <LayoutItem DashboardItem="listBoxDashboardItem1" Weight="0.5336355514377419" />
+          <LayoutItem DashboardItem="cardDashboardItem1" Weight="1.81162105820456" />
+        </LayoutGroup>
       </LayoutGroup>
     </LayoutGroup>
   </LayoutTree>
