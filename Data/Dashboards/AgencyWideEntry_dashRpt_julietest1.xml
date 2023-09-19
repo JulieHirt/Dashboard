@@ -31,6 +31,7 @@
         <CalculatedField Name="fMONTH" Expression="[Mdate] " DataType="Auto" DataMember="DASB_RPT" />
         <CalculatedField Name="FYEAR" Expression="[Mdate] " DataType="Auto" DataMember="DASB_RPT" />
         <CalculatedField Name="Calculated Field 1" Expression="Sum( [TotalCount] ) " DataType="Auto" DataMember="DASB_RPT" />
+        <CalculatedField Name="Calculated Field 2" Expression="[TotalCount] + ' ' +  [TBLTYPE] " DataMember="DASB_RPT" />
       </CalculatedFields>
     </SqlDataSource>
     <SqlDataSource Name="Dasb_Agency_List" ComponentName="sqlDataSource2">
@@ -117,20 +118,23 @@
       </Panes>
       <AxisX TitleVisible="true" Title="Day" />
     </Chart>
-    <Card ComponentName="cardDashboardItem1" Name="Cards 1" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[DataItem5] &gt; 0">
+    <Card ComponentName="cardDashboardItem1" Name="Cards 1" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[TotalCount] &gt; 0">
       <DataItems>
-        <Dimension DataMember="FYEAR" DefaultId="DataItem0" />
-        <Dimension DataMember="fMONTH" DateTimeGroupInterval="Month" DefaultId="DataItem1" />
         <Dimension DataMember="Mdate" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem2" />
         <Measure DataMember="TotalCount" DefaultId="DataItem4" />
-        <Dimension DataMember="TotalCount" DefaultId="DataItem5" />
+        <Measure DataMember="TotalCount" SummaryType="Count" DefaultId="DataItem3" />
+        <Dimension DataMember="TBLTYPE" DateTimeGroupInterval="Day" DefaultId="DataItem6" />
+        <Dimension DataMember="TBLTYPE" DefaultId="DataItem0" />
       </DataItems>
       <HiddenDimensions>
-        <Dimension DefaultId="DataItem0" />
-        <Dimension DefaultId="DataItem1" />
+        <Dimension DefaultId="DataItem6" />
       </HiddenDimensions>
+      <HiddenMeasures>
+        <Measure DefaultId="DataItem3" />
+      </HiddenMeasures>
       <SeriesDimensions>
         <SeriesDimension DefaultId="DataItem2" />
+        <SeriesDimension DefaultId="DataItem0" />
       </SeriesDimensions>
       <Card>
         <ActualValue DefaultId="DataItem4" />
@@ -138,17 +142,14 @@
         <PercentVariationNumericFormat />
         <PercentOfTargetNumericFormat />
         <SparklineOptions ViewType="Bar" />
-        <LayoutTemplate Type="Stretched">
-          <TopValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
-          <MainValue Visible="true" ValueType="Title" DimensionIndex="0" />
-          <SubValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
-          <BottomValue1 Visible="true" ValueType="PercentVariation" DimensionIndex="0" />
-          <BottomValue2 Visible="true" ValueType="AbsoluteVariation" DimensionIndex="0" />
-          <DeltaIndicator Visible="true" />
-          <Sparkline Visible="true" />
+        <LayoutTemplate MinWidth="100" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
         </LayoutTemplate>
       </Card>
-      <SparklineArgument DefaultId="DataItem5" />
     </Card>
   </Items>
   <LayoutOptions>
