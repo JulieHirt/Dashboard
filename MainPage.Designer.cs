@@ -67,7 +67,7 @@
 			this.dxDashboard1.Dock = Wisej.Web.DockStyle.Fill;
 			this.dxDashboard1.Location = new System.Drawing.Point(278, 103);
 			this.dxDashboard1.Name = "dxDashboard1";
-			this.dxDashboard1.Size = new System.Drawing.Size(1569, 728);
+			this.dxDashboard1.Size = new System.Drawing.Size(895, 262);
 			this.dxDashboard1.TabIndex = 0;
 			this.dxDashboard1.Text = "dxDashboard1";
 			this.dxDashboard1.WebRequest += new Wisej.Web.WebRequestHandler(this.dxDashboard1_WebRequest);
@@ -96,7 +96,7 @@
 			this.panelDashboards.Name = "panelDashboards";
 			this.panelDashboards.ShowCloseButton = false;
 			this.panelDashboards.ShowHeader = true;
-			this.panelDashboards.Size = new System.Drawing.Size(228, 728);
+			this.panelDashboards.Size = new System.Drawing.Size(228, 262);
 			this.panelDashboards.TabIndex = 3;
 			this.panelDashboards.Text = "MY DASHBOARDS";
 			// 
@@ -109,7 +109,7 @@
 			this.listBox1.ItemHeight = 40;
 			this.listBox1.Location = new System.Drawing.Point(0, 0);
 			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(228, 632);
+			this.listBox1.Size = new System.Drawing.Size(228, 166);
 			this.listBox1.TabIndex = 0;
 			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBoxDashboards_SelectedIndexChanged);
 			// 
@@ -120,7 +120,7 @@
 			this.buttonAddDashboard.Dock = Wisej.Web.DockStyle.Bottom;
 			this.buttonAddDashboard.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
 			this.buttonAddDashboard.ImageSource = "resource.wx/Wisej.Ext.BootstrapIcons/bar-chart.svg";
-			this.buttonAddDashboard.Location = new System.Drawing.Point(0, 632);
+			this.buttonAddDashboard.Location = new System.Drawing.Point(0, 166);
 			this.buttonAddDashboard.Name = "buttonAddDashboard";
 			this.buttonAddDashboard.Size = new System.Drawing.Size(228, 68);
 			this.buttonAddDashboard.TabIndex = 1;
@@ -141,7 +141,7 @@
 			this.flexLayoutPanelTools.Location = new System.Drawing.Point(0, 103);
 			this.flexLayoutPanelTools.Name = "flexLayoutPanelTools";
 			this.flexLayoutPanelTools.Padding = new Wisej.Web.Padding(0, 8, 0, 0);
-			this.flexLayoutPanelTools.Size = new System.Drawing.Size(50, 728);
+			this.flexLayoutPanelTools.Size = new System.Drawing.Size(50, 262);
 			this.flexLayoutPanelTools.TabIndex = 4;
 			// 
 			// buttonExportReport
@@ -196,7 +196,7 @@
 			this.panel2.Dock = Wisej.Web.DockStyle.Top;
 			this.panel2.Location = new System.Drawing.Point(0, 0);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(1847, 103);
+			this.panel2.Size = new System.Drawing.Size(1173, 103);
 			this.panel2.TabIndex = 5;
 			// 
 			// flexLayoutPanel2
@@ -213,7 +213,7 @@
 			this.flexLayoutPanel2.HeaderForeColor = System.Drawing.Color.FromName("@toolbarText");
 			this.flexLayoutPanel2.ImageSource = "resource.wx/Wisej.Ext.BootstrapIcons/calendar2-date.svg";
 			this.flexLayoutPanel2.LayoutStyle = Wisej.Web.FlexLayoutStyle.Horizontal;
-			this.flexLayoutPanel2.Location = new System.Drawing.Point(1140, 13);
+			this.flexLayoutPanel2.Location = new System.Drawing.Point(423, 13);
 			this.flexLayoutPanel2.Name = "flexLayoutPanel2";
 			this.flexLayoutPanel2.ShowCloseButton = false;
 			this.flexLayoutPanel2.ShowHeader = true;
@@ -223,6 +223,7 @@
 			// 
 			// radioButton4
 			// 
+			this.radioButton4.Enabled = false;
 			this.radioButton4.Location = new System.Drawing.Point(3, 3);
 			this.radioButton4.Name = "radioButton4";
 			this.radioButton4.Size = new System.Drawing.Size(86, 43);
@@ -231,6 +232,7 @@
 			// 
 			// radioButton1
 			// 
+			this.radioButton1.Enabled = false;
 			this.radioButton1.Location = new System.Drawing.Point(105, 3);
 			this.radioButton1.Name = "radioButton1";
 			this.radioButton1.Size = new System.Drawing.Size(63, 43);
@@ -249,6 +251,7 @@
 			// 
 			// radioButton3
 			// 
+			this.radioButton3.Enabled = false;
 			this.radioButton3.Location = new System.Drawing.Point(269, 3);
 			this.radioButton3.Name = "radioButton3";
 			this.radioButton3.Size = new System.Drawing.Size(56, 43);
@@ -257,6 +260,7 @@
 			// 
 			// radioButton6
 			// 
+			this.radioButton6.Enabled = false;
 			this.radioButton6.Location = new System.Drawing.Point(341, 3);
 			this.radioButton6.Name = "radioButton6";
 			this.radioButton6.Size = new System.Drawing.Size(75, 43);
@@ -296,13 +300,14 @@
 			this.flexLayoutPanel1.HeaderForeColor = System.Drawing.Color.FromName("@toolbarText");
 			this.flexLayoutPanel1.ImageSource = "checkbox";
 			this.flexLayoutPanel1.LayoutStyle = Wisej.Web.FlexLayoutStyle.Horizontal;
-			this.flexLayoutPanel1.Location = new System.Drawing.Point(681, 13);
+			this.flexLayoutPanel1.Location = new System.Drawing.Point(7, 13);
 			this.flexLayoutPanel1.Name = "flexLayoutPanel1";
 			this.flexLayoutPanel1.ShowCloseButton = false;
 			this.flexLayoutPanel1.ShowHeader = true;
 			this.flexLayoutPanel1.Size = new System.Drawing.Size(410, 77);
 			this.flexLayoutPanel1.TabIndex = 6;
 			this.flexLayoutPanel1.Text = "Compare";
+			this.flexLayoutPanel1.Visible = false;
 			// 
 			// radioButton5
 			// 
@@ -357,7 +362,7 @@
 			this.Controls.Add(this.flexLayoutPanelTools);
 			this.Controls.Add(this.panel2);
 			this.Name = "MainPage";
-			this.Size = new System.Drawing.Size(1847, 831);
+			this.Size = new System.Drawing.Size(1173, 365);
 			this.Load += new System.EventHandler(this.MainPage_Load);
 			this.panelDashboards.ResumeLayout(false);
 			this.flexLayoutPanelTools.ResumeLayout(false);
