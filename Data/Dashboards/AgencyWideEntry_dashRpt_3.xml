@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dashboard>
-  <Title Text="Agency Wide Data Entry Activity - Kranthi" />
+  <Title Text="Agency Wide Data Entry Activity" />
   <DataSources>
     <SqlDataSource Name="DashboardReport_Analsys" ComponentName="sqlDataSource1">
       <Connection Name="CMMSo" FromAppConfig="true" />
