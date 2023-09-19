@@ -67,7 +67,7 @@
 			this.dxDashboard1.Dock = Wisej.Web.DockStyle.Fill;
 			this.dxDashboard1.Location = new System.Drawing.Point(278, 103);
 			this.dxDashboard1.Name = "dxDashboard1";
-			this.dxDashboard1.Size = new System.Drawing.Size(895, 262);
+			this.dxDashboard1.Size = new System.Drawing.Size(920, 262);
 			this.dxDashboard1.TabIndex = 0;
 			this.dxDashboard1.Text = "dxDashboard1";
 			this.dxDashboard1.WebRequest += new Wisej.Web.WebRequestHandler(this.dxDashboard1_WebRequest);
@@ -196,7 +196,7 @@
 			this.panel2.Dock = Wisej.Web.DockStyle.Top;
 			this.panel2.Location = new System.Drawing.Point(0, 0);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(1173, 103);
+			this.panel2.Size = new System.Drawing.Size(1198, 103);
 			this.panel2.TabIndex = 5;
 			// 
 			// flexLayoutPanel2
@@ -213,7 +213,7 @@
 			this.flexLayoutPanel2.HeaderForeColor = System.Drawing.Color.FromName("@toolbarText");
 			this.flexLayoutPanel2.ImageSource = "resource.wx/Wisej.Ext.BootstrapIcons/calendar2-date.svg";
 			this.flexLayoutPanel2.LayoutStyle = Wisej.Web.FlexLayoutStyle.Horizontal;
-			this.flexLayoutPanel2.Location = new System.Drawing.Point(423, 13);
+			this.flexLayoutPanel2.Location = new System.Drawing.Point(448, 13);
 			this.flexLayoutPanel2.Name = "flexLayoutPanel2";
 			this.flexLayoutPanel2.ShowCloseButton = false;
 			this.flexLayoutPanel2.ShowHeader = true;
@@ -300,7 +300,7 @@
 			this.flexLayoutPanel1.HeaderForeColor = System.Drawing.Color.FromName("@toolbarText");
 			this.flexLayoutPanel1.ImageSource = "checkbox";
 			this.flexLayoutPanel1.LayoutStyle = Wisej.Web.FlexLayoutStyle.Horizontal;
-			this.flexLayoutPanel1.Location = new System.Drawing.Point(7, 13);
+			this.flexLayoutPanel1.Location = new System.Drawing.Point(32, 13);
 			this.flexLayoutPanel1.Name = "flexLayoutPanel1";
 			this.flexLayoutPanel1.ShowCloseButton = false;
 			this.flexLayoutPanel1.ShowHeader = true;
@@ -362,7 +362,7 @@
 			this.Controls.Add(this.flexLayoutPanelTools);
 			this.Controls.Add(this.panel2);
 			this.Name = "MainPage";
-			this.Size = new System.Drawing.Size(1173, 365);
+			this.Size = new System.Drawing.Size(1198, 365);
 			this.Load += new System.EventHandler(this.MainPage_Load);
 			this.panelDashboards.ResumeLayout(false);
 			this.flexLayoutPanelTools.ResumeLayout(false);
