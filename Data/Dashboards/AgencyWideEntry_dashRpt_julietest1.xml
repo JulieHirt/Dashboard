@@ -118,7 +118,7 @@
       </Panes>
       <AxisX TitleVisible="true" Title="Day" />
     </Chart>
-    <Card ComponentName="cardDashboardItem1" Name="Amount Per Day" ParentContainer="groupDashboardItem1" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[TotalCount] &gt; 0">
+    <Card ComponentName="cardDashboardItem1" Name="Amount Per Day" ShowCaption="false" ParentContainer="groupDashboardItem1" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[TotalCount] &gt; 0">
       <DataItems>
         <Dimension DataMember="Mdate" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem2" />
         <Measure DataMember="TotalCount" DefaultId="DataItem4" />
