@@ -132,6 +132,49 @@
       <HiddenMeasures>
         <Measure DefaultId="DataItem3" />
       </HiddenMeasures>
+      <FormatRules>
+        <CardItemDeltaFormatRule Name="Format Rule 1" DeltaValueType="ActualValue" CardId="DataItem4">
+          <FormatConditionRangeGradient ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="GradientTransparent" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="10" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="20" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="30" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="40" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="60" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="70" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="80" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="90" />
+                  <AppearanceSettings AppearanceType="GradientBlue" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeGradient>
+          <CardFormatRuleLayoutElement />
+        </CardItemDeltaFormatRule>
+      </FormatRules>
       <SeriesDimensions>
         <SeriesDimension DefaultId="DataItem2" />
         <SeriesDimension DefaultId="DataItem0" />
