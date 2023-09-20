@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dashboard>
-  <Title Text="Referrals to Partners" />
+  <Title Text="Service Plans" />
   <DataSources>
     <SqlDataSource Name="DashboardReport_Analsys" ComponentName="sqlDataSource1">
       <Connection Name="CMMSo" FromAppConfig="true" />
@@ -88,7 +88,7 @@
     </Parameter>
   </Parameters>
   <Items>
-    <Chart ComponentName="chartDashboardItem2" Name="Daily Referrals to Partners" ShowCaption="false" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[TotalCount] &gt; 0 And TRIM([DataItem3]) = 'Referrals to Partners'">
+    <Chart ComponentName="chartDashboardItem2" Name="Daily Service Plans" ShowCaption="false" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[TotalCount] &gt; 0 And TRIM([DataItem3]) = 'Service Plans'">
       <ColoringOptions MeasuresColoringMode="Hue" />
       <DataItems>
         <Dimension DataMember="FYEAR" DefaultId="DataItem0" />
@@ -117,7 +117,7 @@
       </Arguments>
       <Panes>
         <Pane Name="Pane 1">
-          <AxisY Title="Referrals to Partners" />
+          <AxisY Title="Service Plans" />
           <Series>
             <Simple>
               <Value DefaultId="DataItem4" />
@@ -128,7 +128,7 @@
       <ChartLegend Visible="false" />
       <AxisX TitleVisible="true" Title="Day" />
     </Chart>
-    <Card ComponentName="cardDashboardItem1" Name="Amount Per Day" ShowCaption="false" ParentContainer="groupDashboardItem1" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[TotalCount] &gt; 0 And TRIM([DataItem6]) = 'Referrals to Partners'">
+    <Card ComponentName="cardDashboardItem1" Name="Amount Per Day" ShowCaption="false" ParentContainer="groupDashboardItem1" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[TotalCount] &gt; 0 And TRIM([DataItem6]) = 'Service Plans'">
       <DataItems>
         <Dimension DataMember="Mdate" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem2" />
         <Measure DataMember="TotalCount" DefaultId="DataItem4" />

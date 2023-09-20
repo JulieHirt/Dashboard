@@ -88,7 +88,7 @@
     </Parameter>
   </Parameters>
   <Items>
-    <Chart ComponentName="chartDashboardItem2" Name="Daily  Agency Intakes" ShowCaption="false" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[TotalCount] &gt; 0 And TRIM([DataItem3]) = 'Referrals to Programs'">
+    <Chart ComponentName="chartDashboardItem2" Name="Daily Referrals to Programs" ShowCaption="false" DataSource="sqlDataSource1" DataMember="DASB_RPT" FilterString="[TotalCount] &gt; 0 And TRIM([DataItem3]) = 'Referrals to Programs'">
       <ColoringOptions MeasuresColoringMode="Hue" />
       <DataItems>
         <Dimension DataMember="FYEAR" DefaultId="DataItem0" />
@@ -283,6 +283,28 @@
         <DimensionKey>
           <Definition DataMember="TBLTYPE" />
           <Value Type="System.String" Value="   Services" />
+        </DimensionKey>
+      </DimensionKeys>
+    </Entry>
+    <Entry DataSource="sqlDataSource1" DataMember="DASB_RPT" Color="-3612169">
+      <MeasureKey>
+        <Definition DataMember="TotalCount" />
+      </MeasureKey>
+      <DimensionKeys>
+        <DimensionKey>
+          <Definition DataMember="TBLTYPE" />
+          <Value Type="System.String" Value="  Outcomes" />
+        </DimensionKey>
+      </DimensionKeys>
+    </Entry>
+    <Entry DataSource="sqlDataSource1" DataMember="DASB_RPT" Color="-3612169">
+      <MeasureKey>
+        <Definition DataMember="TotalCount" />
+      </MeasureKey>
+      <DimensionKeys>
+        <DimensionKey>
+          <Definition DataMember="TBLTYPE" />
+          <Value Type="System.String" Value=" Assessments" />
         </DimensionKey>
       </DimensionKeys>
     </Entry>

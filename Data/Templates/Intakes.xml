@@ -286,6 +286,28 @@
         </DimensionKey>
       </DimensionKeys>
     </Entry>
+    <Entry DataSource="sqlDataSource1" DataMember="DASB_RPT" Color="-3612169">
+      <MeasureKey>
+        <Definition DataMember="TotalCount" />
+      </MeasureKey>
+      <DimensionKeys>
+        <DimensionKey>
+          <Definition DataMember="TBLTYPE" />
+          <Value Type="System.String" Value="  Outcomes" />
+        </DimensionKey>
+      </DimensionKeys>
+    </Entry>
+    <Entry DataSource="sqlDataSource1" DataMember="DASB_RPT" Color="-3612169">
+      <MeasureKey>
+        <Definition DataMember="TotalCount" />
+      </MeasureKey>
+      <DimensionKeys>
+        <DimensionKey>
+          <Definition DataMember="TBLTYPE" />
+          <Value Type="System.String" Value=" Assessments" />
+        </DimensionKey>
+      </DimensionKeys>
+    </Entry>
   </ColorScheme>
   <LayoutOptions>
     <Width Value="1090" />
